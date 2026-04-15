@@ -33,6 +33,11 @@ const transformData = (data) => {
         categoryImage: item.categoryImage,
         products: []
       };
+    } else {
+      // ✅ UPDATE IMAGE IF FOUND LATER
+      if (item.categoryImage) {
+        collection.categories[categoryKey].categoryImage = item.categoryImage.trim();
+      }
     }
 
     // Add product
