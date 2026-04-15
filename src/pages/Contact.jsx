@@ -15,7 +15,7 @@ function Contact() {
         <div className="mx-auto max-w-md space-y-6 border border-[#d3c7bb]/60 bg-[#fff8f4] p-8 shadow-sm">
           <div>
             <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">Business Email</p>
-            <a href="mailto:hello@maniratnajewels.com" className="mt-2 block text-base font-semibold text-matteBlack">hello@maniratnajewels.com</a>
+            <a href="mailto:maniratnajewels25@gmail.com" className="mt-2 block text-base font-semibold text-matteBlack">hello@maniratnajewels.com</a>
           </div>
           <div>
             <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">WhatsApp</p>

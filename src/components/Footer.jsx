@@ -32,7 +32,7 @@ function Footer() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1a1a1a]">Connect</p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-[#5b504a]">
-                <a href="mailto:hello@maniratnajewels.com" className="transition hover:text-matteBlack">hello@maniratnajewels.com</a>
+                <a href="mailto:maniratnajewels25@gmail.com" className="transition hover:text-matteBlack">Email</a>
                 <a href="https://wa.me/919448793711" className="transition hover:text-matteBlack">WhatsApp</a>
                 <a href="https://instagram.com/maniratna_jewels25" target='blank' className="transition hover:text-matteBlack">Instagram</a>
               </div>
