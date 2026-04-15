@@ -82,6 +82,7 @@ export const fetchCollections = async () => {
             categoryTitle: item.categoryTitle,
             categorySubtitle: item.categorySubtitle,
             categoryDescription: item.categoryDescription,
+            categoryImage: item.categoryImage?.trim(), // ✅ FIX
 
             name: item.name,
             description: item.description,

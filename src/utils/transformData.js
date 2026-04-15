@@ -12,6 +12,7 @@ export const transformData = (data) => {
         title: item.collectionTitle,
         subtitle: item.collectionSubtitle,
         description: item.collectionDescription,
+        categoryImage: item.categoryImage,
         categories: {}
       };
     }
