@@ -30,6 +30,7 @@ const transformData = (data) => {
         title: item.categoryTitle,
         subtitle: item.categorySubtitle,
         description: item.categoryDescription,
+        categoryImage: item.categoryImage,
         products: []
       };
     }
