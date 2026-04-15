@@ -14,27 +14,36 @@ function CollectionDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
-    setLoading(true)
-
+    setLoading(true);
+    
     fetchCollections().then((data) => {
-      const filtered = data.filter((p) => {
-        return (
-          p.collection?.trim().toLowerCase() === collectionId.toLowerCase() &&
-          (!categoryId || p.category?.trim().toLowerCase() === categoryId.toLowerCase()) &&
-          p.status?.trim().toLowerCase() === 'active'
-        )
-      })
-      console.log("CURRENT CATEGORY:", categoryId);
-      console.log("CATEGORY IMAGE:", categoryId?.categoryImage);
-      console.log("ALL PRODUCTS:", data.length);
-      console.log("FILTERED:", filtered.length);
-      console.log("SHEET URL:", import.meta.env.VITE_CSV_URL);
-      console.log(data);
-
-      setProducts(filtered)
-      setLoading(false)
-    })
-  }, [collectionId, categoryId])
+      const collection = data.find(c => c.key === collectionId);
+    
+      if (!collection) {
+        setProducts([]);
+        setLoading(false);
+        return;
+      }
+    
+      let products = [];
+    
+      if (categoryId) {
+        const category = collection.categories.find(
+          cat => cat.key === categoryId
+        );
+      
+        products = category ? category.products : [];
+      } else {
+        // all products
+        products = collection.categories.flatMap(cat => cat.products);
+      }
+    
+      console.log("FINAL PRODUCTS:", products.length);
+    
+      setProducts(products);
+      setLoading(false);
+    });
+  }, [collectionId, categoryId]);
 
   if (!collection) {
     return (
