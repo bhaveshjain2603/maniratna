@@ -65,12 +65,17 @@ function CollectionDetail() {
   }
 
   const getWhatsAppLink = (product) => {
+    const imageUrl = `${window.location.origin}${getPrimaryImage(product)}`;
+
     const message = `Hello MANIRATNA JEWELS,
 
 I would like to inquire about this jewellery piece:
 
 ✨ Name: ${product.name}
 🔖 Code: ${product.productCode}
+
+📸 Image:
+${imageUrl} 
 
 Please share more details.`
 
