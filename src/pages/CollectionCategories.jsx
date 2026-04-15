@@ -9,7 +9,7 @@ function CollectionCategories() {
   useEffect(() => {
     fetchCollections().then(setCollections);
   }, []);
-  
+
   if (!collections.length) {
     return <p className="text-center mt-20">Loading...</p>
   }
@@ -43,6 +43,7 @@ function CollectionCategories() {
 
       <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {collection?.categories?.map(category => (
+          console.log("PENDANT CATEGORY OBJECT:", category),
           <div key={category.key} className="group overflow-hidden border border-[#e6d9cf] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-glow">
             
             <div className="h-64 overflow-hidden bg-[#f7f1eb]">
