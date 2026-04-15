@@ -444,7 +444,7 @@ const collections = [
   },
   {
     key: 'temple-heritage',
-    hero: '/images/temple-heritage/necklace/TH-NK-0001A.jpg',
+    hero: '/images/temple-heritage/necklace/necklace-hero.jpg',
     title: 'Temple Heritage',
     subtitle: 'Sacred motifs rendered in rich gold and classic craftsmanship.',
     description: 'Pieces rooted in temple artistry, designed to feel powerful and timeless.',
