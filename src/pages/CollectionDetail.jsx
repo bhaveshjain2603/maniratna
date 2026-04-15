@@ -27,6 +27,7 @@ function CollectionDetail() {
       console.log("CURRENT CATEGORY:", categoryId);
       console.log("ALL PRODUCTS:", data.length);
       console.log("FILTERED:", filtered.length);
+      console.log("SHEET URL:", import.meta.env.VITE_CSV_URL);
       console.log(data);
 
       setProducts(filtered)
