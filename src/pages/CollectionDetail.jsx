@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { getCollectionByKey } from '../data/collectionsData'
 import { getImagePaths, getPrimaryImage } from '../utils/imageUtils'
-import { fetchProducts } from '../utils/fetchProducts'
+import { fetchCollections } from '../utils/fetchProducts'
 
 function CollectionDetail() {
   const { collectionId, categoryId } = useParams()
@@ -16,7 +16,7 @@ function CollectionDetail() {
   useEffect(() => {
     setLoading(true)
 
-    fetchProducts().then((data) => {
+    fetchCollections().then((data) => {
       const filtered = data.filter((p) => {
         return (
           p.collection?.trim().toLowerCase() === collectionId.toLowerCase() &&
