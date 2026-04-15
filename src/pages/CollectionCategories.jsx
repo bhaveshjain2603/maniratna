@@ -7,8 +7,36 @@ function CollectionCategories() {
   const [collections, setCollections] = useState([])
 
   useEffect(() => {
-    fetchCollections().then(setCollections)
-  }, [])
+    setLoading(true);
+  
+    fetchCollections().then((data) => {
+      const collection = data.find(c => c.key === collectionId);
+    
+      if (!collection) {
+        setProducts([]);
+        setLoading(false);
+        return;
+      }
+    
+      let products = [];
+    
+      if (categoryId) {
+        const category = collection.categories.find(
+          cat => cat.key === categoryId
+        );
+      
+        products = category ? category.products : [];
+      } else {
+        // all products
+        products = collection.categories.flatMap(cat => cat.products);
+      }
+    
+      console.log("FINAL PRODUCTS:", products.length);
+    
+      setProducts(products);
+      setLoading(false);
+    });
+  }, [collectionId, categoryId]);
 
   if (!collections.length) {
     return <p className="text-center mt-20">Loading...</p>
