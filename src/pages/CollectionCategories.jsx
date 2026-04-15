@@ -1,9 +1,20 @@
 import { Link, useParams } from 'react-router-dom'
-import { getCollectionByKey } from '../data/collectionsData'
+import { useState, useEffect } from 'react'
+import { fetchCollections } from '../utils/fetchProducts'
 
 function CollectionCategories() {
   const { collectionId } = useParams()
-  const collection = getCollectionByKey(collectionId)
+  const [collections, setCollections] = useState([])
+
+  useEffect(() => {
+    fetchCollections().then(setCollections)
+  }, [])
+
+  if (!collections.length) {
+    return <p className="text-center mt-20">Loading...</p>
+  }
+
+  const collection = collections.find(c => c.key === collectionId)
 
   if (!collection) {
     return (
@@ -31,15 +42,24 @@ function CollectionCategories() {
       </div>
 
       <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {collection.categories.map(category => (
+        {collection?.categories?.map(category => (
           <div key={category.key} className="group overflow-hidden border border-[#e6d9cf] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-glow">
+            
             <div className="h-64 overflow-hidden bg-[#f7f1eb]">
-              <img src={category.hero} alt={category.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <img
+                src={category.products?.[0]
+                  ? `/images/${category.products[0].collection}/${category.products[0].category}/${category.products[0].productCode}A.jpg`
+                  : "/images/fallback.jpg"}
+                alt={category.title}
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              />
             </div>
+
             <div className="p-6">
               <h2 className="mt-2 mb-4 text-2xl font-semibold text-[#111111]">{category.title}</h2>
               <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">{category.subtitle}</p>
               <p className="mt-3 text-sm leading-7 text-[#6d5e56]">{category.description}</p>
+
               <Link
                 to={`/collections/${collectionId}/${category.key}`}
                 className="mt-6 inline-flex items-center justify-center rounded-md border border-[#b28c49] px-5 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]"
@@ -47,6 +67,7 @@ function CollectionCategories() {
                 Explore More
               </Link>
             </div>
+
           </div>
         ))}
       </div>
