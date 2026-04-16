@@ -36,7 +36,7 @@ function Collections() {
           <>
             {/* Skeleton Header */}
             <div className="mb-10 text-center">
-              <p className="text-sm tracking-[0.35em] text-[#7a665c]">Loading collections...</p>
+              <p className="text-sm text-[#7a665c]">Loading collections...</p>
             </div>
           </>
         ) : (
