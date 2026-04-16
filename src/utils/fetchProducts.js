@@ -30,7 +30,7 @@ const transformData = (data) => {
       title: item.categoryTitle,
       subtitle: item.categorySubtitle,
       description: item.categoryDescription,
-      categoryImage: null,
+      categoryImage: item.categoryImage,
       products: []
      };
     }
@@ -38,10 +38,6 @@ const transformData = (data) => {
     // ✅ ALWAYS try to update categoryImage
     const img = item.categoryImage?.trim();
  
-    if (img && img !== "") {
-  collection.categories[categoryKey].categoryImage = img;
-    }
-
     // Add product
     collection.categories[categoryKey].products.push({
       name: item.name,
@@ -89,7 +85,7 @@ export const fetchCollections = async () => {
             categoryTitle: item.categoryTitle,
             categorySubtitle: item.categorySubtitle,
             categoryDescription: item.categoryDescription,
-            categoryImage: item.categoryImage?.trim() || null,
+            categoryImage: item.categoryImage?.trim(),
 
             name: item.name,
             description: item.description,
