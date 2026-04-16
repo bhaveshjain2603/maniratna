@@ -13,7 +13,7 @@ export const transformData = (data) => {
         subtitle: item.collectionSubtitle,
         description: item.collectionDescription,
         categoryImage: item.categoryImage,
-        collectionImage: item.collectionImage || null,
+        collectionImage: null,
         categories: {}
       };
     }
