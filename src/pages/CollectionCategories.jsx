@@ -3,16 +3,16 @@ import { useState, useEffect } from 'react'
 import { fetchCollections } from '../utils/fetchProducts'
 
 function CollectionCategories() {
+  const [loading, setLoading] = useState(true);
   const { collectionId } = useParams()
   const [collections, setCollections] = useState([])
 
   useEffect(() => {
-    fetchCollections().then(setCollections);
+    fetchCollections().then((data) => {
+      setCollections(data);
+      setLoading(false);
+    });
   }, []);
-
-  if (!collections.length) {
-    return <p className="text-center mt-20">Loading...</p>
-  }
 
   const collection = collections.find(c => c.key === collectionId)
 
@@ -87,7 +87,7 @@ function CollectionCategories() {
             </div>
           ))
         )}
-      
+
       </div>
     </div>
   )
