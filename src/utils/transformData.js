@@ -13,9 +13,15 @@ export const transformData = (data) => {
         subtitle: item.collectionSubtitle,
         description: item.collectionDescription,
         categoryImage: item.categoryImage,
-        collectionImage: item.collectionImage,
+        collectionImage: item.collectionImage || null,
         categories: {}
       };
+    }
+
+    const img = item.collectionImage?.trim();
+
+    if (img && img !== "") {
+      collectionsMap[collectionKey].collectionImage = img;
     }
 
     const collection = collectionsMap[collectionKey];
