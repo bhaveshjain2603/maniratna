@@ -59,7 +59,7 @@ function Home() {
           </div>
           <div className="border border-[#d3c7bb]/60 bg-white/90 p-8 shadow-sm">
             <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">About Preview</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#111111] font-serifHeading">MANIRATNA JEWELS celebrates heritage with confidence.</h2>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#111111] font-serifHeading">Maniratna Jewels celebrates heritage with confidence.</h2>
             <p className="mt-4 text-base leading-8 text-[#5b504a]">
               Founded for discerning audiences, our jewellery honors tradition through refined materials, modern silhouettes, and exceptional finish.
             </p>
