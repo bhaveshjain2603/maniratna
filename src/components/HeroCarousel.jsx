@@ -4,17 +4,14 @@ import victorianHero from '../../public/images/victorian-royalty/Victorian.jpg'
 const slides = [
   {
     title: 'Crafted to Make You Stand Out',
-    subtitle: 'Timeless jewellery for graceful moments.',
     image: victorianHero
   },
   {
     title: 'Heritage Jewellery With Modern Poise',
-    subtitle: 'A refined collection designed for elegant occasions.',
     image: victorianHero  
   },
   {
     title: 'Luxury That Feels Personal',
-    subtitle: 'Curated pieces for B2B partnerships and discerning customers.',
     image: victorianHero
   }
 ]
@@ -42,8 +39,6 @@ function HeroCarousel() {
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 text-white sm:px-10">
         <p className="text-sm uppercase tracking-[0.35em] text-[#d8cab8]">MANIRATNA JEWELS</p>
         <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl font-serifHeading">{slide.title}</h2>
-        <p className="mt-4 max-w-2xl text-sm leading-7 text-[#efe7db] sm:text-base">{slide.subtitle}</p>
-        
       </div>
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-3">
         {slides.map((_, index) => (
