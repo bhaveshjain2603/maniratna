@@ -59,14 +59,8 @@ function CollectionCategories() {
         {loading ? (
           <>
             <div className="mb-10 space-y-4 text-center">
-              <p className="text-sm text-[#7a665c]">Loading categories...</p>
+              <p className="text-sm  text-[#7a665c]">Loading categories...</p>
             </div>
-
-            if(!fetchCollections()) {
-              <div className="text-center">
-                <p className="text-sm text-[#7a665c]">No products found in this category.</p>
-              </div>
-            }
           </>
         ) : (
           <>
