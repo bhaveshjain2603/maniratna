@@ -10,6 +10,10 @@ function CollectionCategories() {
     fetchCollections().then(setCollections);
   }, []);
 
+  if (!collections.length) {
+    return <p className="text-center mt-20">Loading...</p>
+  }
+
   const collection = collections.find(c => c.key === collectionId)
 
   if (!collection) {
