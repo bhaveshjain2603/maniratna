@@ -1,23 +1,31 @@
 import { Link } from 'react-router-dom'
 import HeroCarousel from '../components/HeroCarousel'
 import CollectionCard from '../components/CollectionCard'
-import victorianRoyaltyA from '../../public/images/victorian-royalty/Victorian.jpg'
+import indoHero from '../../public/images/indo-western/necklaces/necklace.jpg'
+import templeHero from '../../public/images/temple-heritage/pendants/TH-PD-0031A.jpg'
+import victorianHero from '../../public/images/victorian-royalty/necklaces/necklace.jpg'
+import minimalHero from '../../public/images/minimal-edit/minimal.jpg'
 
 const collections = [
   {
     title: 'Victorian Collection',
     description: 'Ornate designs with antique charm for morning and evening silhouettes.',
-    image: victorianRoyaltyA
+    image: victorianHero
   },
   {
     title: 'Indo-Western Collection',
     description: 'Lavish pieces inspired by celebrations and timeless unions.',
-    image: victorianRoyaltyA
+    image: indoHero
   },
   {
     title: 'Temple Jewellery',
     description: 'Heritage motifs with handcrafted goldwork and graceful detailing.',
-    image: victorianRoyaltyA
+    image: templeHero
+  },
+  {
+    title: 'Minimal Edit',
+    description: 'Refined, lightweight designs crafted for everyday elegance and modern sophistication.',
+    image: minimalHero
   }
 ]
 
