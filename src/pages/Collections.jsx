@@ -43,6 +43,9 @@ function Collections() {
           <>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {collections.map(item => (
+                
+                console.log("FINAL COLLECTION IMAGE:", item.key, item.collectionImage),
+
                 <div key={item.key} className="group overflow-hidden border border-[#e6d9cf] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-glow">
                   
                   <div className="h-64 overflow-hidden bg-[#f7f1eb]">

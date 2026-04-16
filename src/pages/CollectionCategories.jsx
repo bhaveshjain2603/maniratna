@@ -79,7 +79,6 @@ function CollectionCategories() {
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {collection?.categories?.map(category => (
                 console.log("FINAL CATEGORY IMAGE:", category.key, category.categoryImage),
-
                 <div key={category.key} className="group overflow-hidden border border-[#e6d9cf] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-glow">
 
                   <div className="h-64 overflow-hidden bg-[#f7f1eb]">
