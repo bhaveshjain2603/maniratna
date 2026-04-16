@@ -41,7 +41,11 @@ export const transformData = (data) => {
       color: item.color,
       polish: item.polish,
       material: item.material,
-      dimensions: item.dimensions
+      dimensions: item.dimensions,
+      
+      // 🔥 IMPORTANT ADD THESE
+      collection: item.collection,
+      category: item.category
     });
   });
 
