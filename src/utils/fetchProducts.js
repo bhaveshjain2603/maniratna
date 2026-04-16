@@ -30,14 +30,15 @@ const transformData = (data) => {
         title: item.categoryTitle,
         subtitle: item.categorySubtitle,
         description: item.categoryDescription,
-        categoryImage: item.categoryImage,
+        categoryImage: null,
         products: []
       };
-    } else {
-      // ✅ UPDATE IMAGE IF FOUND LATER
-      if (item.categoryImage) {
-        collection.categories[categoryKey].categoryImage = item.categoryImage.trim();
-      }
+    }
+    
+    const img = item.categoryImage?.trim();
+    
+    if (img && img !== "") {
+      collection.categories[categoryKey].categoryImage = img;
     }
 
     // Add product
