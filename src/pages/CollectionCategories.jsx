@@ -12,17 +12,17 @@ function CollectionCategories() {
 
   const collection = collections.find(c => c.key === collectionId)
 
-  if (!collection) {
-    return (
-      <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-8">
-        <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">Collection not found</p>
-        <h1 className="mt-6 text-4xl font-semibold text-[#111111]">The collection you are looking for is unavailable.</h1>
-        <Link to="/collections" className="mt-8 inline-flex rounded-md border border-[#b28c49] bg-white px-6 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]">
-          Back to Collections
-        </Link>
-      </div>
-    )
-  }
+  // if (!collection) {
+  //   return (
+  //     <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-8">
+  //       <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">Collection not found</p>
+  //       <h1 className="mt-6 text-4xl font-semibold text-[#111111]">The collection you are looking for is unavailable.</h1>
+  //       <Link to="/collections" className="mt-8 inline-flex rounded-md border border-[#b28c49] bg-white px-6 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]">
+  //         Back to Collections
+  //       </Link>
+  //     </div>
+  //   )
+  // }
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:py-20">
