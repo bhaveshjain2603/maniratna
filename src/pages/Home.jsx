@@ -47,9 +47,6 @@ function Home() {
               <Link to="/collections" className="inline-flex items-center justify-center border border-transparent bg-matteBlack px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#1a1a1a]">
                 Explore Collections
               </Link>
-              <Link to="/about" className="inline-flex items-center justify-center border border-[#b28c49] px-8 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]">
-                Know More
-              </Link>
             </div>
           </div>
           <div className="border border-[#d3c7bb]/60 bg-white/90 p-8 shadow-sm">
