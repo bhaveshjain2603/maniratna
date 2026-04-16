@@ -26,18 +26,20 @@ const transformData = (data) => {
     // Create category
     if (!collection.categories[categoryKey]) {
       collection.categories[categoryKey] = {
-      key: categoryKey,
-      title: item.categoryTitle,
-      subtitle: item.categorySubtitle,
-      description: item.categoryDescription,
-      categoryImage: item.categoryImage,
-      products: []
-     };
+        key: categoryKey,
+        title: item.categoryTitle,
+        subtitle: item.categorySubtitle,
+        description: item.categoryDescription,
+        categoryImage: item.categoryImage,
+        products: []
+      };
+    } else {
+      // ✅ UPDATE IMAGE IF FOUND LATER
+      if (item.categoryImage) {
+        collection.categories[categoryKey].categoryImage = item.categoryImage.trim();
+      }
     }
 
-    // ✅ ALWAYS try to update categoryImage
-    const img = item.categoryImage?.trim();
- 
     // Add product
     collection.categories[categoryKey].products.push({
       name: item.name,
@@ -85,7 +87,7 @@ export const fetchCollections = async () => {
             categoryTitle: item.categoryTitle,
             categorySubtitle: item.categorySubtitle,
             categoryDescription: item.categoryDescription,
-            categoryImage: item.categoryImage?.trim(),
+            categoryImage: item.categoryImage?.trim(), // ✅ FIX
 
             name: item.name,
             description: item.description,
@@ -100,10 +102,7 @@ export const fetchCollections = async () => {
 
             status: item.status?.trim().toLowerCase()
           }));
-      
-          const img = item.categoryImage?.trim();
 
-          
           // 🔥 FILTER ONLY ACTIVE PRODUCTS
           const activeData = cleaned.filter((item) => item.status === "active");
 
