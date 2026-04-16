@@ -36,7 +36,7 @@ function HeroCarousel() {
       <img
         src={slide.image}
         alt={slide.title}
-        className="aspect-[4/5] object-cover object-center opacity-90 transition duration-100"
+        className="w-full object-cover object-center opacity-90 transition duration-100"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/90 via-[#111111]/20 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 text-white sm:px-10">
