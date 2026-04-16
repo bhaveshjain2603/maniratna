@@ -47,7 +47,7 @@ function Collections() {
                   
                   <div className="h-64 overflow-hidden bg-[#f7f1eb]">
                     <img
-                      src={item.categories?.[0]?.categoryImage || "/images/fallback.jpg"}
+                      src={item.categories?.[0]?.collectionImage || "/images/fallback.jpg"}
                       alt={item.title}
                       onError={(e) => (e.target.src = "/images/fallback.jpg")}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
