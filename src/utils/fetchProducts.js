@@ -79,6 +79,7 @@ export const fetchCollections = async () => {
           // 🔥 CLEAN DATA (VERY IMPORTANT)
           const cleaned = results.data.map((item) => ({
             collection: item.collection?.trim().toLowerCase(),
+            collectionImage: item.collectionImage?.trim(), // ✅ FIX
             collectionTitle: item.collectionTitle,
             collectionSubtitle: item.collectionSubtitle,
             collectionDescription: item.collectionDescription,
