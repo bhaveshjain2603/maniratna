@@ -105,7 +105,7 @@ export const fetchCollections = async () => {
             status: item.status?.trim().toLowerCase()
           }));
       
-          const img = item.categoryImage?.trim() || null;
+          const img = item.categoryImage?.trim();
 
           
           // 🔥 FILTER ONLY ACTIVE PRODUCTS
