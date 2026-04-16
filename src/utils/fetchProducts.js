@@ -107,10 +107,7 @@ export const fetchCollections = async () => {
       
           const img = item.categoryImage?.trim() || null;
 
-          if (img) {
-                                                           collection.categories[categoryKey].categoryImage = img;
-          }
-
+          
           // 🔥 FILTER ONLY ACTIVE PRODUCTS
           const activeData = cleaned.filter((item) => item.status === "active");
 
