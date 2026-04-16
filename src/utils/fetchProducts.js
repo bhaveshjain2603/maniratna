@@ -89,7 +89,7 @@ export const fetchCollections = async () => {
             categoryTitle: item.categoryTitle,
             categorySubtitle: item.categorySubtitle,
             categoryDescription: item.categoryDescription,
-            categoryImage: item.categoryImage?.trim(), // ✅ FIX
+            categoryImage: item.categoryImage?.trim() || null,
 
             name: item.name,
             description: item.description,
@@ -104,6 +104,12 @@ export const fetchCollections = async () => {
 
             status: item.status?.trim().toLowerCase()
           }));
+      
+          const img = item.categoryImage?.trim() || null;
+
+          if (img) {
+                                                           collection.categories[categoryKey].categoryImage = img;
+          }
 
           // 🔥 FILTER ONLY ACTIVE PRODUCTS
           const activeData = cleaned.filter((item) => item.status === "active");
