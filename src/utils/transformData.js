@@ -12,20 +12,15 @@ export const transformData = (data) => {
         title: item.collectionTitle,
         subtitle: item.collectionSubtitle,
         description: item.collectionDescription,
-        categoryImage: item.categoryImage,
         collectionImage: null,
         categories: {}
       };
     }
-    
-    // ✅ Always update if found later
-    if (item.collectionImage && item.collectionImage.trim() !== "") {
-      collectionsMap[collectionKey].collectionImage = item.collectionImage.trim();
-    }
 
     const img = item.collectionImage?.trim();
 
-    if (img && img !== "") {
+    // ✅ SET ONLY ONCE (FIRST VALID IMAGE)
+    if (img && img !== "" && !collectionsMap[collectionKey].collectionImage) {
       collectionsMap[collectionKey].collectionImage = img;
     }
 
