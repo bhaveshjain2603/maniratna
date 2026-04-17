@@ -17,6 +17,11 @@ export const transformData = (data) => {
         categories: {}
       };
     }
+    
+    // ✅ Always update if found later
+    if (item.collectionImage && item.collectionImage.trim() !== "") {
+      collectionsMap[collectionKey].collectionImage = item.collectionImage.trim();
+    }
 
     const img = item.collectionImage?.trim();
 
