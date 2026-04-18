@@ -24,6 +24,9 @@ function Contact() {
     try {
       const response = await fetch(SHEET_URL, {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+       },
         body: JSON.stringify(formData),
       });
 
