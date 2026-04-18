@@ -43,7 +43,7 @@ function Contact() {
       console.warn("Non-JSON response, but request succeeded");
     }
 
-    if (result.status === "success") {
+    if (response.status === "success" || response.status === 200) {
       alert("Enquiry submitted successfully!");
       setFormData({
         firstName: '',
