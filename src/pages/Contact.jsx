@@ -85,8 +85,7 @@ function Contact() {
         </h1>
 
         <p className="mx-auto max-w-2xl text-[#5b504a] leading-8">
-          Whether you're a retailer, or styling for a special occasion,
-          connect with MANIRATNA JEWELS for bespoke creations and bulk enquiries.
+          Whether you're a wholesaler or retailer, connect with MANIRATNA JEWELS for bespoke creations and bulk enquiries.
         </p>
       </div>
 
