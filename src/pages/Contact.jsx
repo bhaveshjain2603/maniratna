@@ -1,50 +1,49 @@
 import { useState } from "react";
 
-const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-
-const [formData, setFormData] = useState({
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  message: ''
-});
-
-const handleChange = (e) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.value
-  });
-};
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    const response = await fetch(SHEET_URL, {
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
-
-    const result = await response.json();
-
-    if (result.status === "success") {
-      alert("Enquiry submitted successfully!");
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Something went wrong");
-  }
-};
-
 function Contact() {
+  const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(SHEET_URL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("Enquiry submitted successfully!");
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    }
+  };
   const [openModal, setOpenModal] = useState(false);
 
   return (
