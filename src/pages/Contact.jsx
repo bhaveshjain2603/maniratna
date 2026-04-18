@@ -27,7 +27,7 @@ function Contact() {
     try {
       await fetch(SHEET_URL, {
         method: "POST",
-        mode: "cors",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
