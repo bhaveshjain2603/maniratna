@@ -1,5 +1,49 @@
 import { useState } from "react";
 
+const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+
+const [formData, setFormData] = useState({
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  message: ''
+});
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(SHEET_URL, {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (result.status === "success") {
+      alert("Enquiry submitted successfully!");
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong");
+  }
+};
+
 function Contact() {
   const [openModal, setOpenModal] = useState(false);
 
@@ -31,36 +75,51 @@ function Contact() {
             Business Enquiry
           </h2>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
+                name="firstName"
                 placeholder="First Name"
                 className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+                value={formData.firstName}
+                onChange={handleChange}
               />
               <input
                 type="text"
+                name="lastName"
                 placeholder="Last Name"
                 className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+                value={formData.lastName}
+                onChange={handleChange}
               />
             </div>
 
             <input
               type="email"
+              name="email"
               placeholder="Email Address"
               className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              value={formData.email}
+              onChange={handleChange}
             />
 
             <input
               type="text"
+              name="phone"
               placeholder="Phone Number"
               className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              value={formData.phone}
+              onChange={handleChange}
             />
 
             <textarea
+              name="message"
               rows="4"
               placeholder="Tell us about your requirement (B2B / Bulk Order)"
               className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              value={formData.message}
+              onChange={handleChange}
             />
 
             <button className="rounded-md w-full border border-[#b28c49] bg-[#b28c49] text-white text-xl py-3 font-semibold hover:bg-[#a07d3f] transition">

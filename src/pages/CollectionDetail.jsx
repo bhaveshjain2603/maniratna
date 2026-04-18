@@ -79,15 +79,15 @@ function CollectionDetail() {
 
     const message = `Hello MANIRATNA JEWELS,
 
-I would like to inquire about this jewellery piece:
-
-✨ Name: ${product.name}
-🔖 Code: ${product.productCode}
-
-📸 Image:
-${imageUrl} 
-
-Please share more details.`
+      I would like to inquire about this jewellery piece:
+        
+      ✨ Name: ${product.name}
+      🔖 Code: ${product.productCode}
+        
+      📸 Image:
+      ${imageUrl} 
+        
+      Please share more details.`
 
     return `https://api.whatsapp.com/send?phone=919448793711&text=${encodeURIComponent(message)}`
   }
