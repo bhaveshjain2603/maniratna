@@ -132,7 +132,7 @@ function Contact() {
             <select
               name="businessType"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] text-gray-700"
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.businessType}
               onChange={handleChange}
             >
