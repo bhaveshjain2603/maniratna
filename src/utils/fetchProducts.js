@@ -17,8 +17,14 @@ const transformData = (data) => {
         title: item.collectionTitle,
         subtitle: item.collectionSubtitle,
         description: item.collectionDescription,
+        collectionImage: null, // 🔥 important
         categories: {}
       };
+    }
+
+    // ✅ Assign collection image ONLY if present
+    if (item.collectionImage && item.collectionImage !== "") {
+      collectionsMap[collectionKey].collectionImage = item.collectionImage;
     }
 
     const collection = collectionsMap[collectionKey];
@@ -30,15 +36,9 @@ const transformData = (data) => {
         title: item.categoryTitle,
         subtitle: item.categorySubtitle,
         description: item.categoryDescription,
-        categoryImage: null,
+        categoryImage: item.categoryImage,
         products: []
       };
-    }
-    
-    const img = item.categoryImage?.trim();
-    
-    if (img && img !== "") {
-      collection.categories[categoryKey].categoryImage = img;
     }
 
     // Add product
@@ -57,7 +57,6 @@ const transformData = (data) => {
     });
   });
 
-  // Convert object → array
   return Object.values(collectionsMap).map((collection) => ({
     ...collection,
     categories: Object.values(collection.categories)
@@ -77,38 +76,47 @@ export const fetchCollections = async () => {
         skipEmptyLines: true,
         complete: (results) => {
 
-          // 🔥 CLEAN DATA (VERY IMPORTANT)
-          const cleaned = results.data.map((item) => ({
-            collection: item.collection?.trim().toLowerCase(),
-            collectionImage: item.collectionImage?.trim(), // ✅ FIX
-            collectionTitle: item.collectionTitle,
-            collectionSubtitle: item.collectionSubtitle,
-            collectionDescription: item.collectionDescription,
+          // 🔥 FIX: REMOVE BOM + CLEAN KEYS
+          const cleaned = results.data.map((item) => {
+            const normalized = {};
 
-            category: item.category?.trim().toLowerCase(),
-            categoryTitle: item.categoryTitle,
-            categorySubtitle: item.categorySubtitle,
-            categoryDescription: item.categoryDescription,
-            categoryImage: item.categoryImage?.trim(), // ✅ FIX
+            Object.keys(item).forEach((key) => {
+              const cleanKey = key.trim().replace(/^\uFEFF/, "");
+              normalized[cleanKey] = item[key];
+            });
 
-            name: item.name,
-            description: item.description,
-            productCode: item.productCode?.trim(),
-            imageCount: Number(item.imageCount),
+            return {
+              collection: normalized.collection?.trim().toLowerCase(),
+              collectionImage: normalized.collectionImage?.trim(),
 
-            weight: item.weight,
-            color: item.color,
-            polish: item.polish,
-            material: item.material,
-            dimensions: item.dimensions,
+              collectionTitle: normalized.collectionTitle,
+              collectionSubtitle: normalized.collectionSubtitle,
+              collectionDescription: normalized.collectionDescription,
 
-            status: item.status?.trim().toLowerCase()
-          }));
+              category: normalized.category?.trim().toLowerCase(),
+              categoryTitle: normalized.categoryTitle,
+              categorySubtitle: normalized.categorySubtitle,
+              categoryDescription: normalized.categoryDescription,
+              categoryImage: normalized.categoryImage?.trim(),
 
-          // 🔥 FILTER ONLY ACTIVE PRODUCTS
+              name: normalized.name,
+              description: normalized.description,
+              productCode: normalized.productCode?.trim(),
+              imageCount: Number(normalized.imageCount),
+
+              weight: normalized.weight,
+              color: normalized.color,
+              polish: normalized.polish,
+              material: normalized.material,
+              dimensions: normalized.dimensions,
+
+              status: normalized.status?.trim().toLowerCase()
+            };
+          });
+
+          // 🔥 Filter active only
           const activeData = cleaned.filter((item) => item.status === "active");
 
-          // 🔥 TRANSFORM TO STRUCTURED DATA
           const structured = transformData(activeData);
 
           resolve(structured);
