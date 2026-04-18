@@ -21,22 +21,23 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const loadingToast = toast.loading("Submitting enquiry...");
-  
+
     try {
       await fetch(SHEET_URL, {
         method: "POST",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-    
+
       toast.dismiss(loadingToast);
-    
+
       toast.success("Enquiry submitted successfully ✨");
-    
+
       setFormData({
         firstName: '',
         lastName: '',
@@ -44,11 +45,11 @@ function Contact() {
         phone: '',
         message: ''
       });
-    
+
     } catch (error) {
       toast.dismiss(loadingToast);
       console.error(error);
-    
+
       toast.error("Submission failed. Try again.");
     }
   };
