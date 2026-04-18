@@ -20,7 +20,7 @@ export const transformData = (data) => {
     const img = item.collectionImage?.trim();
 
     // ✅ SET ONLY ONCE (FIRST VALID IMAGE)
-    if (img && img !== "" && !collectionsMap[collectionKey].collectionImage) {
+    if (!collectionsMap[collectionKey].collectionImage && img) {
       collectionsMap[collectionKey].collectionImage = img;
     }
 
