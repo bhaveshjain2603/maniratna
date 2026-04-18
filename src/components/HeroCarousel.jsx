@@ -43,7 +43,7 @@ function HeroCarousel() {
         <h2 className="mt-4 max-w-3xl text-2xl font-semibold leading-tight sm:text-5xl font-serifHeading">{slide.title}</h2>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-[#efe7db] sm:text-base">{slide.subtitle}</p>
         {/* 🔥 CTA BUTTONS */}
-        <div className="mt-6 flex flex-row gap-4">
+        <div className="mt-6 flex flex-col sm:flex-row gap-4">
           
           <a
             href="/collections"
@@ -59,13 +59,6 @@ function HeroCarousel() {
             Chat on WhatsApp
           </a>
         
-        </div>
-        
-        {/* 🔥 TRUST LINE */}
-        <div className="mt-5 text-xs sm:text-sm text-[#e8ded6] space-y-1">
-          <p>✔ Trusted by Retailers</p>
-          <p>✔ Bulk Orders Available</p>
-          <p>✔ Custom Designs Supported</p>
         </div>
       </div>
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-3">
