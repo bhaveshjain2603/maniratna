@@ -151,7 +151,7 @@ function Contact() {
       {/* MODAL */}
       {openModal && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white p-8 max-w-lg w-full shadow-lg relative">
+          <div className="bg-white p-8 max-w-lg sm:w-9/12 w-full shadow-lg relative">
 
             <button
               onClick={() => setOpenModal(false)}
