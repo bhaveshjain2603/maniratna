@@ -6,8 +6,11 @@ function Contact() {
 
   const [formData, setFormData] = useState({
     fullName: '',
+    businessName: '',
     email: '',
     phone: '',
+    businessType: '',   // ✅ ADD THIS
+    otherBusiness: '',  // ✅ ADD THIS
     message: ''
   });
 
@@ -54,17 +57,17 @@ function Contact() {
   const [openModal, setOpenModal] = useState(false);
 
   const isFormValid =
-  formData.fullName.trim() !== '' &&
-  formData.businessName.trim() !== '' &&
-  formData.email.trim() !== '' &&
-  formData.phone.trim() !== '' &&
-  formData.businessType.trim() !== '' &&
-  formData.message.trim() !== '' &&
-  (
-    formData.businessType !== "Others" ||
-    formData.otherBusiness.trim() !== ''
-  );
-
+    (formData.fullName || '').trim() !== '' &&
+    (formData.businessName || '').trim() !== '' &&
+    (formData.email || '').trim() !== '' &&
+    (formData.phone || '').trim() !== '' &&
+    (formData.businessType || '').trim() !== '' &&
+    (formData.message || '').trim() !== '' &&
+    (
+      (formData.businessType || '').trim().toLowerCase() !== "others" ||
+      (formData.otherBusiness || '').trim() !== ''
+    );
+    
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:py-20">
 
@@ -138,7 +141,7 @@ function Contact() {
               value={formData.businessType}
               onChange={handleChange}
             />
-              
+
             {/* CONDITIONAL FIELD */}
             {formData.businessType.trim().toLowerCase() === "others" && (
               <input
