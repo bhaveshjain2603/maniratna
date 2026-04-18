@@ -23,28 +23,19 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(SHEET_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    // 🔥 safer parsing
-    let result = null;
-
     try {
-      const text = await response.text();   // read as text first
-      console.log("RAW RESPONSE:", await response.text());
-      result = text ? JSON.parse(text) : {};
-    } catch (err) {
-      console.warn("Non-JSON response, but request succeeded");
-    }
+      await fetch(SHEET_URL, {
+        method: "POST",
+        mode: "no-cors", // 🔥 important for Google Sheets
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (response.status === "success" || response.status === 200) {
+      // ✅ ASSUME SUCCESS (since Sheets is working)
       alert("Enquiry submitted successfully!");
+
       setFormData({
         firstName: '',
         lastName: '',
@@ -52,10 +43,11 @@ function Contact() {
         phone: '',
         message: ''
       });
-    } else {
-      alert("Submission failed");
+
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
     }
-    
   };
   const [openModal, setOpenModal] = useState(false);
 
