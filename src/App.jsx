@@ -24,13 +24,13 @@ function App() {
           },
           success: {
             iconTheme: {
-              primary: '#b28c49',
+              primary: '#16a34a',
               secondary: '#fff'
             }
           },
           error: {
             iconTheme: {
-              primary: '#b91c1c',
+              primary: '#dc2626',
               secondary: '#fff'
             }
           }
