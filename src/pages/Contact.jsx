@@ -1,9 +1,8 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 function Contact() {
   const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-
-  console.log("SHEET URL:", SHEET_URL);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -22,20 +21,22 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    const loadingToast = toast.loading("Submitting enquiry...");
+  
     try {
       await fetch(SHEET_URL, {
         method: "POST",
-        mode: "no-cors", // 🔥 important for Google Sheets
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
-      // ✅ ASSUME SUCCESS (since Sheets is working)
-      alert("Enquiry submitted successfully!");
-
+    
+      toast.dismiss(loadingToast);
+    
+      toast.success("Enquiry submitted successfully ✨");
+    
       setFormData({
         firstName: '',
         lastName: '',
@@ -43,10 +44,12 @@ function Contact() {
         phone: '',
         message: ''
       });
-
+    
     } catch (error) {
+      toast.dismiss(loadingToast);
       console.error(error);
-      alert("Something went wrong");
+    
+      toast.error("Submission failed. Try again.");
     }
   };
   const [openModal, setOpenModal] = useState(false);
