@@ -86,7 +86,7 @@ function Contact() {
               type="text"
               name="fullName"
               placeholder="Full Name"
-              className="rounded-md w-full border border-[#d6c8bd] text-white placeholder:text-white p-3 outline-none focus:border-[#b28c49]"
+              className="rounded-md w-full border border-[#d6c8bd] text-white p-3 outline-none focus:border-[#b28c49]"
               value={formData.fullName}
               onChange={handleChange}
             />
