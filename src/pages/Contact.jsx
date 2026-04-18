@@ -128,27 +128,19 @@ function Contact() {
               onChange={handleChange}
             />
 
-            {/* BUSINESS TYPE DROPDOWN */}
-            <select
+            {/* BUSINESS TYPE INPUT */}
+            <input
+              type="text"
               name="businessType"
+              placeholder="Business Type (Manufacturer / Wholesaler / Retailer / Others)"
               required
-              className={`
-                rounded-md w-full border border-[#d6c8bd] p-3 outline-none
-                focus:border-[#b28c49]
-                ${formData.businessType === "" ? "text-[#9c8f86]" : "text-[#111111]"}
-              `}
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.businessType}
               onChange={handleChange}
-            >
-              <option value="" className="text-white">Select Business Type</option>
-              <option value="Manufacturer" className="text-white">Manufacturer</option>
-              <option value="Wholesaler" className="text-white">Wholesaler</option>
-              <option value="Retailer" className="text-white">Retailer</option>
-              <option value="Others" className="text-white">Others</option>
-            </select>
-
+            />
+              
             {/* CONDITIONAL FIELD */}
-            {formData.businessType === "Others" && (
+            {formData.businessType.trim().toLowerCase() === "others" && (
               <input
                 type="text"
                 name="otherBusiness"
