@@ -37,12 +37,13 @@ function Contact() {
 
     try {
       const text = await response.text();   // read as text first
+      console.log("RAW RESPONSE:", await response.text());
       result = text ? JSON.parse(text) : {};
     } catch (err) {
       console.warn("Non-JSON response, but request succeeded");
     }
 
-    if (response.ok) {
+    if (result.status === "success") {
       alert("Enquiry submitted successfully!");
       setFormData({
         firstName: '',
