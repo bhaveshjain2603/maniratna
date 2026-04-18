@@ -26,12 +26,12 @@ function Contact() {
       <div className="grid gap-10 md:grid-cols-2">
 
         {/* LEFT: FORM */}
-        <div className="border border-[#e6d9cf] bg-white p-8 shadow-sm space-y-6">
+        <div className="border border-[#e6d9cf] rounded-lg bg-white p-8 shadow-sm space-y-6">
           <h2 className="text-2xl font-semibold text-[#111111]">
             Business Enquiry
           </h2>
 
-          <form className="space-y-4">
+          <form className="space-y-4 rounded-md">
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
