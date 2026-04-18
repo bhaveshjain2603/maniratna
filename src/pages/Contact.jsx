@@ -42,6 +42,9 @@ function Contact() {
 
       setFormData({
         fullName: '',
+        businessName: '',
+        businessType: '',   // ✅ RESET THIS
+        otherBusiness: '',  // ✅ RESET THIS
         email: '',
         phone: '',
         message: ''
@@ -67,7 +70,7 @@ function Contact() {
       (formData.businessType || '').trim().toLowerCase() !== "others" ||
       (formData.otherBusiness || '').trim() !== ''
     );
-    
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:py-20">
 
