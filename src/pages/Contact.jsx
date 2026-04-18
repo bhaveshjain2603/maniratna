@@ -63,17 +63,17 @@ function Contact() {
               className="w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
             />
 
-            <button className="w-full border border-[#b28c49] bg-[#b28c49] text-white py-3 font-semibold hover:bg-[#a07d3f] transition">
+            <button className="w-full border border-[#b28c49] bg-[#b28c49] text-white text-md py-3 font-semibold hover:bg-[#a07d3f] transition">
               Submit Enquiry
             </button>
           </form>
         </div>
 
         {/* RIGHT: CONTACT INFO */}
-        <div className="space-y-6 rounded-lg">
+        <div className="space-y-6">
 
           {/* INFO CARD */}
-          <div className="border border-[#e6d9cf] bg-[#fff8f4] p-8 space-y-6 shadow-sm">
+          <div className="border border-[#e6d9cf] bg-[#fff8f4] p-8 space-y-6 rounded-lg shadow-sm">
 
             <div>
               <p className="text-xs uppercase tracking-[0.35em] text-[#7a665c]">
@@ -111,14 +111,14 @@ function Contact() {
             {/* CTA */}
             <a
               href="https://wa.me/919448793711?text=Hello%20MANIRATNA%20JEWELS%2C%20I%20am%20interested%20in%20your%20collection."
-              className="inline-flex items-center justify-center w-full border border-[#b28c49] bg-[#25d366] text-white py-3 font-semibold hover:bg-[#128c7e] transition"
+              className="inline-flex items-center justify-center w-full border border-[#b28c49] bg-[#25d366] text-white py-3 font-semibold hover:bg-[#128c7e] rounded-md transition"
             >
               Chat on WhatsApp
             </a>
           </div>
 
           {/* MAP */}
-          <div className="border border-[#e6d9cf] bg-white p-4 shadow-sm">
+          <div className="border border-[#e6d9cf] bg-white p-4 rounded-lg shadow-sm">
             <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c] mb-4">
               Location
             </p>
