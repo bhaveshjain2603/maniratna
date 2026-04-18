@@ -17,7 +17,7 @@ function Contact() {
         </h1>
 
         <p className="mx-auto max-w-2xl text-[#5b504a] leading-8">
-          Whether you're a retailer, boutique owner, or styling for a special occasion,
+          Whether you're a retailer, or styling for a special occasion,
           connect with MANIRATNA JEWELS for bespoke creations and bulk enquiries.
         </p>
       </div>
@@ -63,7 +63,7 @@ function Contact() {
               className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
             />
 
-            <button className="rounded-md w-full border border-[#b28c49] bg-[#b28c49] text-white text-md py-3 font-semibold hover:bg-[#a07d3f] transition">
+            <button className="rounded-md w-full border border-[#b28c49] bg-[#b28c49] text-white text-xl py-3 font-semibold hover:bg-[#a07d3f] transition">
               Submit Enquiry
             </button>
           </form>
@@ -137,13 +137,12 @@ function Contact() {
         </h3>
 
         <p className="text-[#5b504a] max-w-2xl mx-auto">
-          We collaborate with boutiques, retailers, and designers across India.
-          Get in touch to explore exclusive pricing and custom designs.
+          Get in touch to explore exclusive pricing.
         </p>
 
         <button
           onClick={() => setOpenModal(true)}
-          className="mt-4 border border-[#b28c49] px-6 py-3 font-semibold hover:bg-[#b28c49] hover:text-white transition"
+          className="mt-4 border text-lg border-[#b28c49] px-6 py-3 font-semibold hover:bg-[#b28c49] hover:text-white transition"
         >
           View Business Details
         </button>
@@ -161,22 +160,25 @@ function Contact() {
               ✕
             </button>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-2xl font-semibold mb-4">
               Business Enquiries
             </h3>
-
+            <p className="text-sm text-[#7a665c] mb-6 leading-6">
+              Partner with MANIRATNA JEWELS to access timeless collections crafted for modern retailers and premium clientele.
+            </p>
             <ul className="space-y-2 text-[#5b504a]">
-              <li>• Minimum order quantities available</li>
-              <li>• Custom design support</li>
-              <li>• Nationwide B2B supply</li>
-              <li>• Dedicated relationship support</li>
+              <li>• Curated wholesale collections with consistent design language</li>
+              <li>• Flexible bulk ordering tailored for your store requirements</li>
+              <li>• Exclusive design access for select partners</li>
+              <li>• Reliable nationwide supply with quality assurance</li>
+              <li>• Personalized support for seamless business experience</li>
             </ul>
 
             <a
-              href="https://wa.me/919448793711"
-              className="mt-6 block text-center bg-[#25d366] text-white py-3 font-semibold"
+              href="https://wa.me/919448793711?text=Hello%20MANIRATNA%20JEWELS%2C%20I%20am%20interested%20in%20a%20business%20collaboration."
+              className="mt-8 block text-center rounded-md border border-[#b28c49] bg-[#25d366] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#128c7e]"
             >
-              Contact on WhatsApp
+              Start Business Conversation
             </a>
           </div>
         </div>
