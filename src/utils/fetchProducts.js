@@ -86,14 +86,14 @@ export const fetchCollections = async () => {
             });
 
             return {
-              collection: normalized.collection?.trim().toLowerCase(),
+              collection: normalized.collection?.trim().toLowerCase() || "",
               collectionImage: normalized.collectionImage?.trim(),
 
               collectionTitle: normalized.collectionTitle,
               collectionSubtitle: normalized.collectionSubtitle,
               collectionDescription: normalized.collectionDescription,
 
-              category: normalized.category?.trim().toLowerCase(),
+              category: normalized.category?.trim().toLowerCase() || "",
               categoryTitle: normalized.categoryTitle,
               categorySubtitle: normalized.categorySubtitle,
               categoryDescription: normalized.categoryDescription,
