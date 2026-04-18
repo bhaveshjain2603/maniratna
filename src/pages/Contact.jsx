@@ -132,7 +132,11 @@ function Contact() {
             <select
               name="businessType"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className={`
+                rounded-md w-full border border-[#d6c8bd] p-3 outline-none
+                focus:border-[#b28c49]
+                ${formData.businessType === "" ? "text-[#9c8f86]" : "text-[#111111]"}
+              `}
               value={formData.businessType}
               onChange={handleChange}
             >
