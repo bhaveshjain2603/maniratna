@@ -136,11 +136,11 @@ function Contact() {
               value={formData.businessType}
               onChange={handleChange}
             >
-              <option value="">Select Business Type</option>
-              <option value="Manufacturer">Manufacturer</option>
-              <option value="Wholesaler">Wholesaler</option>
-              <option value="Retailer">Retailer</option>
-              <option value="Others">Others</option>
+              <option value="" className="text-white">Select Business Type</option>
+              <option value="Manufacturer" className="text-white">Manufacturer</option>
+              <option value="Wholesaler" className="text-white">Wholesaler</option>
+              <option value="Retailer" className="text-white">Retailer</option>
+              <option value="Others" className="text-white">Others</option>
             </select>
 
             {/* CONDITIONAL FIELD */}
