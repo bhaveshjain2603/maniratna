@@ -3,6 +3,8 @@ import { useState } from "react";
 function Contact() {
   const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
+  console.log("SHEET URL:", SHEET_URL);
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
