@@ -27,43 +27,43 @@ function Contact() {
 
         {/* LEFT: FORM */}
         <div className="border border-[#e6d9cf] rounded-lg bg-white p-8 shadow-sm space-y-6">
-          <h2 className="text-2xl font-semibold text-[#111111]">
+          <h2 className="text-3xl font-semibold text-[#111111]">
             Business Enquiry
           </h2>
 
-          <form className="space-y-4 rounded-md">
+          <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="First Name"
-                className="border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+                className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+                className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
               />
             </div>
 
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
             />
 
             <input
               type="text"
               placeholder="Phone Number"
-              className="w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
             />
 
             <textarea
               rows="4"
-              placeholder="Tell us about your requirement (B2B / Bulk / Custom Design)"
-              className="w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              placeholder="Tell us about your requirement (B2B / Bulk Order)"
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
             />
 
-            <button className="w-full border border-[#b28c49] bg-[#b28c49] text-white text-md py-3 font-semibold hover:bg-[#a07d3f] transition">
+            <button className="rounded-md w-full border border-[#b28c49] bg-[#b28c49] text-white text-md py-3 font-semibold hover:bg-[#a07d3f] transition">
               Submit Enquiry
             </button>
           </form>
