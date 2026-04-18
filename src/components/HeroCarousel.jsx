@@ -40,7 +40,7 @@ function HeroCarousel() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/90 via-[#111111]/20 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 text-white sm:px-10">
-        <h2 className="mt-4 max-w-3xl text-xl font-semibold leading-tight sm:text-5xl font-serifHeading">{slide.title}</h2>
+        <h2 className="mt-4 max-w-3xl text-2xl font-semibold leading-tight sm:text-5xl font-serifHeading">{slide.title}</h2>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-[#efe7db] sm:text-base">{slide.subtitle}</p>
         {/* 🔥 CTA BUTTONS */}
         <div className="mt-6 flex flex-col sm:flex-row gap-4">
