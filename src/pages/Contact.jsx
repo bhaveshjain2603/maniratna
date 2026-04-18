@@ -5,8 +5,7 @@ function Contact() {
   const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     phone: '',
     message: ''
@@ -39,8 +38,7 @@ function Contact() {
       toast.success("Enquiry submitted successfully ✨");
 
       setFormData({
-        firstName: '',
-        lastName: '',
+        fullName: '',
         email: '',
         phone: '',
         message: ''
@@ -84,24 +82,14 @@ function Contact() {
           </h2>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="grid lg:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
-            </div>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              className="rounded-md border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              value={formData.fullName}
+              onChange={handleChange}
+            />
 
             <input
               type="email"
