@@ -143,7 +143,7 @@ function Contact() {
               value={formData.businessType}
               onChange={handleChange}
             />
-            <p className="text-xs text-[#7a665c] mt-1">
+            <p className="text-xs text-[#7a665c] ml-1">
   Manufacturer / Wholesaler / Retailer / Others
 </p>
 
