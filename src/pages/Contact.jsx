@@ -150,36 +150,46 @@ function Contact() {
 
       {/* MODAL */}
       {openModal && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white p-8 max-w-lg sm:w-9/12 w-full shadow-lg relative">
-
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 py-6">
+          
+          <div className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden max-h-[90vh] flex flex-col">
+            
+            {/* CLOSE BUTTON */}
             <button
               onClick={() => setOpenModal(false)}
-              className="absolute top-4 right-4 text-xl"
+              className="absolute top-4 right-4 text-xl text-[#5b504a] hover:text-black"
             >
               ✕
             </button>
-
-            <h3 className="text-2xl font-semibold mb-4">
-              Business Enquiries
-            </h3>
-            <p className="text-sm text-[#7a665c] mb-6 leading-6">
-              Partner with MANIRATNA JEWELS to access timeless collections crafted for modern retailers and premium clientele.
-            </p>
-            <ul className="space-y-2 text-[#5b504a]">
-              <li>• Curated wholesale collections with consistent design language</li>
-              <li>• Flexible bulk ordering tailored for your store requirements</li>
-              <li>• Exclusive design access for select partners</li>
-              <li>• Reliable nationwide supply with quality assurance</li>
-              <li>• Personalized support for seamless business experience</li>
-            </ul>
-
-            <a
-              href="https://wa.me/919448793711?text=Hello%20MANIRATNA%20JEWELS%2C%20I%20am%20interested%20in%20a%20business%20collaboration."
-              className="mt-8 block text-center rounded-md border border-[#b28c49] bg-[#25d366] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#128c7e]"
-            >
-              Start Business Conversation
-            </a>
+      
+            {/* SCROLLABLE CONTENT */}
+            <div className="p-6 sm:p-8 overflow-y-auto">
+              
+              <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-[#111111]">
+                Business Enquiries
+              </h3>
+      
+              <p className="text-sm sm:text-base text-[#7a665c] mb-5 leading-6">
+                Partner with MANIRATNA JEWELS to access timeless collections crafted for modern retailers and premium clientele.
+              </p>
+      
+              <ul className="space-y-2 text-sm sm:text-base text-[#5b504a] leading-6">
+                <li>• Curated wholesale collections with consistent design language</li>
+                <li>• Flexible bulk ordering tailored for your store requirements</li>
+                <li>• Exclusive design access for select partners</li>
+                <li>• Reliable nationwide supply with quality assurance</li>
+                <li>• Personalized support for seamless business experience</li>
+              </ul>
+      
+              {/* CTA */}
+              <a
+                href="https://wa.me/919448793711?text=Hello%20MANIRATNA%20JEWELS%2C%20I%20am%20interested%20in%20a%20business%20collaboration."
+                className="mt-6 sm:mt-8 block text-center rounded-md border border-[#b28c49] bg-[#25d366] px-6 py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-[#128c7e]"
+              >
+                Start Business Conversation
+              </a>
+      
+            </div>
           </div>
         </div>
       )}
