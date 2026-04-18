@@ -23,32 +23,37 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const response = await fetch(SHEET_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    // 🔥 safer parsing
+    let result = null;
+
     try {
-      const response = await fetch(SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-       },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (result.status === "success") {
-        alert("Enquiry submitted successfully!");
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong");
+      const text = await response.text();   // read as text first
+      result = text ? JSON.parse(text) : {};
+    } catch (err) {
+      console.warn("Non-JSON response, but request succeeded");
     }
+
+    if (response.ok) {
+      alert("Enquiry submitted successfully!");
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } else {
+      alert("Submission failed");
+    }
+    
   };
   const [openModal, setOpenModal] = useState(false);
 
