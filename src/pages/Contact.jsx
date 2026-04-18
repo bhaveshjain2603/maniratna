@@ -107,7 +107,7 @@ function Contact() {
               name="fullName"
               placeholder="Full Name"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.fullName}
               onChange={handleChange}
             />
@@ -118,7 +118,7 @@ function Contact() {
               name="businessName"
               placeholder="Business Name"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.businessName}
               onChange={handleChange}
             />
@@ -129,7 +129,7 @@ function Contact() {
               name="email"
               placeholder="Email Address"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.email}
               onChange={handleChange}
             />
@@ -140,7 +140,7 @@ function Contact() {
               name="businessType"
               placeholder="Business Type (Manufacturer / Wholesaler / Retailer / Others)"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.businessType}
               onChange={handleChange}
             />
@@ -151,7 +151,7 @@ function Contact() {
                 type="text"
                 name="otherBusiness"
                 placeholder="Please specify your business"
-                className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+                className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
                 value={formData.otherBusiness}
                 onChange={handleChange}
               />
@@ -163,7 +163,7 @@ function Contact() {
               name="phone"
               placeholder="Phone Number"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.phone}
               onChange={handleChange}
             />
@@ -174,7 +174,7 @@ function Contact() {
               rows="4"
               placeholder="Tell us about your requirement (B2B / Bulk Order)"
               required
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-white"
+              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.message}
               onChange={handleChange}
             />
