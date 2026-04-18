@@ -53,6 +53,18 @@ function Contact() {
   };
   const [openModal, setOpenModal] = useState(false);
 
+  const isFormValid =
+  formData.fullName.trim() !== '' &&
+  formData.businessName.trim() !== '' &&
+  formData.email.trim() !== '' &&
+  formData.phone.trim() !== '' &&
+  formData.businessType.trim() !== '' &&
+  formData.message.trim() !== '' &&
+  (
+    formData.businessType !== "Others" ||
+    formData.otherBusiness.trim() !== ''
+  );
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:py-20">
 
@@ -82,45 +94,103 @@ function Contact() {
           </h2>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
+
+            {/* FULL NAME */}
             <input
               type="text"
               name="fullName"
               placeholder="Full Name"
-              className="rounded-md w-full border border-[#d6c8bd] text-white p-3 outline-none focus:border-[#b28c49]"
+              required
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.fullName}
               onChange={handleChange}
             />
 
+            {/* BUSINESS NAME */}
+            <input
+              type="text"
+              name="businessName"
+              placeholder="Business Name"
+              required
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
+              value={formData.businessName}
+              onChange={handleChange}
+            />
+
+            {/* EMAIL */}
             <input
               type="email"
               name="email"
               placeholder="Email Address"
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              required
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.email}
               onChange={handleChange}
             />
 
+            {/* BUSINESS TYPE DROPDOWN */}
+            <select
+              name="businessType"
+              required
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] text-gray-700"
+              value={formData.businessType}
+              onChange={handleChange}
+            >
+              <option value="">Select Business Type</option>
+              <option value="Manufacturer">Manufacturer</option>
+              <option value="Wholesaler">Wholesaler</option>
+              <option value="Retailer">Retailer</option>
+              <option value="Others">Others</option>
+            </select>
+
+            {/* CONDITIONAL FIELD */}
+            {formData.businessType === "Others" && (
+              <input
+                type="text"
+                name="otherBusiness"
+                placeholder="Please specify your business"
+                className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
+                value={formData.otherBusiness}
+                onChange={handleChange}
+              />
+            )}
+
+            {/* PHONE */}
             <input
               type="text"
               name="phone"
               placeholder="Phone Number"
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              required
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.phone}
               onChange={handleChange}
             />
 
+            {/* MESSAGE */}
             <textarea
               name="message"
               rows="4"
               placeholder="Tell us about your requirement (B2B / Bulk Order)"
-              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49]"
+              required
+              className="rounded-md w-full border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.message}
               onChange={handleChange}
             />
 
-            <button className="rounded-md w-full border border-[#b28c49] bg-[#b28c49] text-white text-xl py-3 font-semibold hover:bg-[#a07d3f] transition">
+            {/* SUBMIT */}
+            <button
+              type="submit"
+              disabled={!isFormValid}
+              className={`
+                rounded-md w-full border text-xl py-3 font-semibold transition
+                ${isFormValid
+                  ? "border-[#b28c49] bg-[#b28c49] text-white hover:bg-[#a07d3f]"
+                  : "border-gray-300 bg-gray-200 text-gray-400 cursor-not-allowed"}
+              `}
+            >
               Submit Enquiry
             </button>
+          
           </form>
         </div>
 
