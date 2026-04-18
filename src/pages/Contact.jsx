@@ -137,12 +137,15 @@ function Contact() {
             <input
               type="text"
               name="businessType"
-              placeholder="Business Type (Manufacturer / Wholesaler / Retailer / Others)"
+              placeholder="Business Type"
               required
               className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.businessType}
               onChange={handleChange}
             />
+            <p className="text-xs text-[#7a665c] mt-1">
+  Manufacturer / Wholesaler / Retailer / Others
+</p>
 
             {/* CONDITIONAL FIELD */}
             {formData.businessType.trim().toLowerCase() === "others" && (
