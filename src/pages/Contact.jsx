@@ -70,7 +70,7 @@ function Contact() {
         </div>
 
         {/* RIGHT: CONTACT INFO */}
-        <div className="space-y-6">
+        <div className="space-y-6 rounded-lg">
 
           {/* INFO CARD */}
           <div className="border border-[#e6d9cf] bg-[#fff8f4] p-8 space-y-6 shadow-sm">
