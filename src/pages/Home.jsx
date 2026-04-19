@@ -5,7 +5,7 @@ import HeroCarousel from '../components/HeroCarousel'
 import CollectionCard from '../components/CollectionCard'
 import indoHero from '../../public/images/indo-western/necklaces/necklace.jpg'
 import templeHero from '../../public/images/temple-heritage/hero.jpg'
-import victorianHero from '../../public/images/victorian-royalty/necklaces/necklace.jpg'
+import victorianHero from '../../public/images/victorian-royalty/necklaces/Victorian.jpg'
 import minimalHero from '../../public/images/minimal-edit/minimal.jpg'
 
 const collections = [
