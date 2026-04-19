@@ -63,6 +63,9 @@ function FeedbackModal() {
             body: JSON.stringify(feedbackData),
         });
 
+        const text = await response.text();
+        console.log("RAW RESPONSE:", text);
+
         const result = await response.json(); // ✅ important
 
         toast.dismiss(loadingToast);
