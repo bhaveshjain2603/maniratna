@@ -76,8 +76,7 @@ function About() {
           </p>
 
           <p className="text-sm sm:text-base leading-7 sm:leading-8 text-[#5b504a]">
-            Our collections draw inspiration from heritage art forms, refined through 
-            contemporary design, and brought to life with meticulous attention to detail.
+            Our creations are rooted in heritage artistry, reimagined through contemporary design, and perfected with an uncompromising attention to detail.
           </p>
 
           <p className="text-sm sm:text-base leading-7 sm:leading-8 text-[#5b504a]">
