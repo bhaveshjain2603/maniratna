@@ -96,7 +96,7 @@ function Home() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {collections.map(card => (
-              <CollectionCard key={card.title} title={card.title} description={card.description} image={card.image} />
+              <CollectionCard key={card.title} title={card.title} description={card.description} image={card.image} buttonText={card.buttonText} />
             ))}
           </div>
         </section>

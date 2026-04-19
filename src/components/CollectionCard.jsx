@@ -1,4 +1,4 @@
-function CollectionCard({ title, description, image }) {
+function CollectionCard({ title, description, image, buttonText }) {
   return (
     <article className="group overflow-hidden border border-[#d7c8bb] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
       <div className="relative h-72 overflow-hidden">
