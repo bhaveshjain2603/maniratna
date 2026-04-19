@@ -54,18 +54,16 @@ function FeedbackModal() {
       const loadingToast = toast.loading("Submitting Feedback...");
   
       try {
-        const response = await fetch(SHEET_URL, {
+        await fetch(SHEET_URL, {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(feedbackData),
         });
 
-        const text = await response.text();
         console.log("RAW RESPONSE:", text);
-
-        const result = await response.json(); // ✅ important
 
         toast.dismiss(loadingToast);
 
