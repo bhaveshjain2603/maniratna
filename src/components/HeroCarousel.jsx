@@ -45,7 +45,7 @@ function HeroCarousel() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/70 via-[#111111]/20 to-transparent" />
 
       {/* CONTENT (CENTER-LEFT, PREMIUM POSITIONING) */}
-      <div className="absolute inset-0 flex items-center px-6 sm:px-12 lg:px-20">
+      <div className="absolute inset-0 flex items-end lg:items-center px-6 sm:px-12 lg:px-20 pb-10 lg:pb-0">
         <div className="max-w-2xl text-white">
 
           <h2 className="text-3xl sm:text-5xl font-semibold leading-tight font-serifHeading">
