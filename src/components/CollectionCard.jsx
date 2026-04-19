@@ -13,7 +13,7 @@ function CollectionCard({ title, description, image, buttonText, link }) {
       <div className="border-t border-[#e9e0d7] px-6 py-6">
         <h3 className="text-lg font-semibold text-[#111111]">{title}</h3>
         <p className="mt-3 text-sm leading-7 text-[#5b504a]">{description}</p>
-        <div className="flex flex-row gap-3 mt-4">
+        <div className="flex flex-col gap-3 mt-4">
 
           {/* VIEW COLLECTION */}
           <Link
@@ -22,7 +22,7 @@ function CollectionCard({ title, description, image, buttonText, link }) {
           >
             {buttonText}
           </Link>
-          
+
           {/* WHATSAPP CTA */}
           <a
             href={`https://wa.me/919448793711?text=✨ Hello MANIRATNA JEWELS,%0A%0A💎 I'm interested in ${title} 💎 — this piece caught my attention.%0A%0ACould you please share the price and details?`}
@@ -35,7 +35,7 @@ function CollectionCard({ title, description, image, buttonText, link }) {
             </svg>
             Chat for Price & Details
           </a>
-          
+
         </div>
       </div>
     </article>
