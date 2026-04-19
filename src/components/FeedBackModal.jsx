@@ -55,25 +55,33 @@ function FeedbackModal() {
   
       try {
         await fetch(SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(feedbackData),
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(feedbackData),
         });
-    
+
+        const result = await response.json(); // ✅ important
+
         toast.dismiss(loadingToast);
-    
-        toast.success("Feedback Submitted Successfully");
-    
-        setFeedbackData({
-        name: '',
-        businessName: '',
-        collection: '',
-        message: ''
-        });
-      
+
+        if (result.status === "success") {
+          toast.success("Feedback Submitted Successfully 💎");
+
+          setFeedbackData({
+            name: "",
+            businessName: "",
+            collection: "",
+            message: ""
+          });
+
+          setOpenFeedback(false); // ✅ close modal
+        } else {
+          toast.error("Submission failed");
+        }
+
       } catch (error) {
           toast.dismiss(loadingToast);
           console.error(error);
