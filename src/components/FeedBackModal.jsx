@@ -34,13 +34,18 @@ function FeedbackModal() {
     setOpenFeedback(false);
   };
 
+  const isFormValid =
+    feedbackData.name.trim() !== "" &&
+    feedbackData.collection.trim() !== "" &&
+    feedbackData.message.trim() !== "";
+  
   return (
     <>
       {/* BUTTON SECTION */}
       <div className="text-center mt-10">
         <button
           onClick={() => setOpenFeedback(true)}
-          className="border border-[#b28c49] px-6 py-3 font-semibold hover:bg-[#b28c49] hover:text-white transition rounded-md"
+          className="border border-[#b28c49] text-xl sm:text-2xl px-6 py-3 font-semibold hover:bg-[#b28c49] hover:text-white transition rounded-md"
         >
           Share Feedback
         </button>
@@ -121,7 +126,13 @@ function FeedbackModal() {
 
                   <button
                     type="submit"
-                    className="px-5 py-2 bg-[#b28c49] text-white rounded-md font-semibold hover:bg-[#a07d3f] transition"
+                    disabled={!isFormValid}
+                    className={`
+                    px-5 py-2 rounded-md font-semibold transition
+                    ${isFormValid
+                        ? "bg-[#b28c49] text-white hover:bg-[#a07d3f] active:scale-95"
+                        : "bg-gray-200 text-gray-400 cursor-not-allowed"}
+                    `}
                   >
                     Submit Feedback
                   </button>
