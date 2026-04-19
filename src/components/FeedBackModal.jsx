@@ -63,8 +63,6 @@ function FeedbackModal() {
             body: JSON.stringify(feedbackData),
         });
 
-        console.log("RAW RESPONSE:", text);
-
         toast.dismiss(loadingToast);
 
         if (result.status === "success") {
