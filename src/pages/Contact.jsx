@@ -137,7 +137,7 @@ function Contact() {
             <input
               type="text"
               name="businessType"
-              placeholder="Business Type"
+              placeholder="Business (Wholesaler / Retailer / Others"
               required
               className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.businessType}
