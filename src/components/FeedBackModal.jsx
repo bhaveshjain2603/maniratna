@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import TextField from "@mui/material/TextField";
 import {
   FormControl,
@@ -8,6 +9,9 @@ import {
 } from "@mui/material";
 
 function FeedbackModal() {
+  
+  const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+
   const [openFeedback, setOpenFeedback] = useState(false);
 
   const [feedbackData, setFeedbackData] = useState({
@@ -24,23 +28,39 @@ function FeedbackModal() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+      e.preventDefault();
 
-    console.log("Feedback:", feedbackData);
-
-    // 👉 Replace with API / Sheet integration if needed
-
-    alert("Thank you for your feedback 💎");
-
-    setFeedbackData({
-      name: "",
-      businessName: "",
-      collection: "",
-      message: ""
-    });
-
-    setOpenFeedback(false);
+      const loadingToast = toast.loading("Submitting Feedback...");
+  
+      try {
+        await fetch(SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        });
+    
+        toast.dismiss(loadingToast);
+    
+        toast.success("Feedback Submitted Successfully");
+    
+        setFormData({
+        name: '',
+        businessName: '',
+        collection: '',
+        message: ''
+        });
+      
+      } catch (error) {
+          toast.dismiss(loadingToast);
+          console.error(error);
+      
+          toast.error("Submission failed. Try again.");
+      }
+    };
   };
 
   const isFormValid =
@@ -173,26 +193,25 @@ function FeedbackModal() {
       )}
     </>
   );
-}
 
-const muiStyles = {
-  "& .MuiOutlinedInput-root": {
+  const muiStyles = {
+    "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "#d6c8bd",
+        borderColor: "#d6c8bd",
     },
     "&:hover fieldset": {
-      borderColor: "#b28c49",
+        borderColor: "#b28c49",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "#b28c49",
+        borderColor: "#b28c49",
     },
-  },
-  "& .MuiInputLabel-root": {
+    },
+    "& .MuiInputLabel-root": {
     color: "#7a665c",
-  },
-  "& .MuiInputLabel-root.Mui-focused": {
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
     color: "#b28c49",
-  },
+    },
 };
 
 export default FeedbackModal;
