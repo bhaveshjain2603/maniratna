@@ -38,7 +38,7 @@ function Contact() {
 
       toast.dismiss(loadingToast);
 
-      toast.success("Enquiry submitted successfully ✨");
+      toast.success("Enquiry submitted successfully");
 
       setFormData({
         fullName: '',
