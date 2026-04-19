@@ -82,7 +82,7 @@ function FeedbackModal() {
                   placeholder="Your Name"
                   value={feedbackData.name}
                   onChange={handleChange}
-                  className="w-full border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49]"
+                  className="w-full text-white border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49]"
                 />
 
                 {/* COLLECTION DROPDOWN */}
@@ -91,15 +91,15 @@ function FeedbackModal() {
                   required
                   value={feedbackData.collection}
                   onChange={handleChange}
-                  className={`w-full border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49] ${
+                  className={`w-full text-white border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49] ${
                     feedbackData.collection === "" ? "text-[#9c8f86]" : "text-[#111]"
                   }`}
                 >
                   <option value="">Select Jewellery Collection</option>
                   <option value="Temple Heritage">Temple Heritage</option>
                   <option value="Victorian Royalty">Victorian Royalty</option>
-                  <option value="Indo-Western">Indo-Western</option>
-                  <option value="Minimal Edit">Minimal Edit</option>
+                  <option value="Indo-Western Elegance">Indo-Western</option>
+                  <option value="The Minimal Edit">Minimal Edit</option>
                 </select>
 
                 {/* MESSAGE */}
@@ -110,7 +110,7 @@ function FeedbackModal() {
                   placeholder="Share your experience..."
                   value={feedbackData.message}
                   onChange={handleChange}
-                  className="w-full border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49]"
+                  className="w-full text-white border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49]"
                 />
 
                 {/* ACTION BUTTONS */}
