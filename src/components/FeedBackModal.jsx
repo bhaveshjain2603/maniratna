@@ -65,20 +65,16 @@ function FeedbackModal() {
 
         toast.dismiss(loadingToast);
 
-        if (result.status === "success") {
-          toast.success("Feedback Submitted Successfully 💎");
+        toast.success("Feedback Submitted Successfully 💎");
 
-          setFeedbackData({
-            name: "",
-            businessName: "",
-            collection: "",
-            message: ""
-          });
+        setFeedbackData({
+        name: "",
+        businessName: "",
+        collection: "",
+        message: ""
+        });
 
-          setOpenFeedback(false); // ✅ close modal
-        } else {
-          toast.error("Submission failed");
-        }
+        setOpenFeedback(false); // ✅ close modal
 
       } catch (error) {
           toast.dismiss(loadingToast);
