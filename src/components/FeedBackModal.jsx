@@ -56,7 +56,6 @@ function FeedbackModal() {
       try {
         await fetch(SHEET_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
             "Content-Type": "application/json",
         },
@@ -83,10 +82,10 @@ function FeedbackModal() {
     };
 
   const isFormValid =
-    feedbackData.name.trim() !== "" &&
-    feedbackData.businessName.trim() !== "" &&
-    feedbackData.collection.trim() !== "" &&
-    feedbackData.message.trim() !== "";
+      (feedbackData.name || "").trim() !== "" &&
+      (feedbackData.businessName || "").trim() !== "" &&
+      (feedbackData.collection || "").trim() !== "" &&
+      (feedbackData.message || "").trim() !== "";
   
   return (
     <>
@@ -213,25 +212,5 @@ function FeedbackModal() {
     </>
 );
 }
-
-const muiStyles = {
-    "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-        borderColor: "#d6c8bd",
-    },
-    "&:hover fieldset": {
-        borderColor: "#b28c49",
-    },
-    "&.Mui-focused fieldset": {
-        borderColor: "#b28c49",
-    },
-    },
-    "& .MuiInputLabel-root": {
-    color: "#7a665c",
-    },
-    "& .MuiInputLabel-root.Mui-focused": {
-    color: "#b28c49",
-    },
-};
 
 export default FeedbackModal;
