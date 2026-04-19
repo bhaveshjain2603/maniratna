@@ -16,6 +16,11 @@ const slides = [
     title: 'Luxury That Feels Personal',
     subtitle: 'Curated pieces for B2B partnerships and discerning customers.',
     image: victorianHero
+  },
+  {
+    title: 'Luxury That Feels Personal',
+    subtitle: 'Curated pieces for B2B partnerships and discerning customers.',
+    image: victorianHero
   }
 ]
 
