@@ -14,7 +14,7 @@ const collections = [
     description: 'Ornate designs with antique charm for morning and evening silhouettes.',
     image: victorianHero,
     buttonText: 'Explore Designs',
-    link: '/collections/victorian/categories',
+    link: '/collections/victorian-royalty/categories',
     type: 'victorian'
   },
   {
