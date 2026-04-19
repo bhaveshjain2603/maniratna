@@ -1,4 +1,10 @@
 import { useState } from "react";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
+} from "@mui/material";
 
 function FeedbackModal() {
   const [openFeedback, setOpenFeedback] = useState(false);
@@ -72,74 +78,74 @@ function FeedbackModal() {
                 Share Your Experience
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-5">
 
-                {/* NAME */}
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Your Name"
-                  value={feedbackData.name}
-                  onChange={handleChange}
-                  className="w-full text-white border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49]"
-                />
+                  <TextField
+                    fullWidth
+                    label="Your Name"
+                    name="name"
+                    value={feedbackData.name}
+                    onChange={handleChange}
+                    required
+                    sx={muiStyles}
+                  />
 
-                {/* COLLECTION DROPDOWN */}
-                <select
-                  name="collection"
-                  required
-                  value={feedbackData.collection}
-                  onChange={handleChange}
-                  className={`w-full text-white border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49] ${
-                    feedbackData.collection === "" ? "text-[#9c8f86]" : "text-[#111]"
-                  }`}
-                >
-                  <option value="">Select Jewellery Collection</option>
-                  <option value="Temple Heritage">Temple Heritage</option>
-                  <option value="Victorian Royalty">Victorian Royalty</option>
-                  <option value="Indo-Western Elegance">Indo-Western</option>
-                  <option value="The Minimal Edit">Minimal Edit</option>
-                </select>
+                  {/* DROPDOWN */}
+                  <FormControl fullWidth required sx={muiStyles}>
+                    <InputLabel>Jewellery Collection</InputLabel>
+                    <Select
+                      name="collection"
+                      value={feedbackData.collection}
+                      label="Jewellery Collection"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value="">Select Collection</MenuItem>
+                      <MenuItem value="Temple Heritage">Temple Heritage</MenuItem>
+                      <MenuItem value="Victorian Royalty">Victorian Royalty</MenuItem>
+                      <MenuItem value="Indo-Western">Indo-Western</MenuItem>
+                      <MenuItem value="Minimal Edit">Minimal Edit</MenuItem>
+                    </Select>
+                  </FormControl>
 
-                {/* MESSAGE */}
-                <textarea
-                  name="message"
-                  required
-                  rows="4"
-                  placeholder="Share your experience..."
-                  value={feedbackData.message}
-                  onChange={handleChange}
-                  className="w-full text-white border border-[#d6c8bd] p-3 rounded-md outline-none focus:border-[#b28c49]"
-                />
+                  <TextField
+                    fullWidth
+                    label="Share your experience..."
+                    name="message"
+                    value={feedbackData.message}
+                    onChange={handleChange}
+                    required
+                    multiline
+                    rows={4}
+                    sx={muiStyles}
+                  />
 
-                {/* ACTION BUTTONS */}
-                <div className="flex gap-3 justify-end mt-4">
+                  {/* BUTTONS */}
+                  <div className="flex gap-3 justify-end mt-4">
 
-                  <button
-                    type="button"
-                    onClick={() => setOpenFeedback(false)}
-                    className="px-5 py-2 border border-[#d6c8bd] rounded-md text-[#5b504a] hover:bg-gray-100 transition"
-                  >
-                    Cancel
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => setOpenFeedback(false)}
+                      className="px-5 py-2 border border-[#d6c8bd] rounded-md text-[#5b504a] hover:bg-gray-100 transition"
+                    >
+                      Cancel
+                    </button>
 
-                  <button
-                    type="submit"
-                    disabled={!isFormValid}
-                    className={`
-                    px-5 py-2 rounded-md font-semibold transition
-                    ${isFormValid
-                        ? "bg-[#b28c49] text-white hover:bg-[#a07d3f] active:scale-95"
-                        : "bg-gray-200 text-gray-400 cursor-not-allowed"}
-                    `}
-                  >
-                    Submit Feedback
-                  </button>
-
-                </div>
-
-              </form>
+                    <button
+                      type="submit"
+                      disabled={!isFormValid}
+                      className={`
+                        px-5 py-2 rounded-md font-semibold transition
+                        ${isFormValid
+                          ? "bg-[#b28c49] text-white hover:bg-[#a07d3f] active:scale-95"
+                          : "bg-gray-200 text-gray-400 cursor-not-allowed"}
+                      `}
+                    >
+                      Submit Feedback
+                    </button>
+                        
+                  </div>
+                        
+                </form>
             </div>
           </div>
         </div>
@@ -147,5 +153,25 @@ function FeedbackModal() {
     </>
   );
 }
+
+const muiStyles = {
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#d6c8bd",
+    },
+    "&:hover fieldset": {
+      borderColor: "#b28c49",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#b28c49",
+    },
+  },
+  "& .MuiInputLabel-root": {
+    color: "#7a665c",
+  },
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#b28c49",
+  },
+};
 
 export default FeedbackModal;

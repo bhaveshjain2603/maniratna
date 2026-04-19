@@ -1,5 +1,11 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
+} from "@mui/material";
 
 function Contact() {
   const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
@@ -98,72 +104,110 @@ function Contact() {
             Business Enquiry
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
 
-            {/* NAME */}
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
+            {/* FULL NAME */}
+            <TextField
+              fullWidth
+              label="Full Name"
+              name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className="rounded-md w-full text-[#111111] border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
-            />
-
-            {/* COLLECTION INPUT */}
-            <input
-              type="text"
-              name="collection"
-              placeholder="Jewellery Collection"
               required
-              value={formData.collection}
-              onChange={handleChange}
-              className="rounded-md w-full text-[#111111] border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
+              sx={muiStyles}
             />
 
-            {/* HELPER TEXT (GUIDANCE) */}
-            <p className="text-xs text-[#7a665c] ml-1">
-              Temple Heritage / Victorian Royalty / Indo-Western / Minimal Edit
-            </p>
+            {/* BUSINESS NAME */}
+            <TextField
+              fullWidth
+              label="Business Name"
+              name="businessName"
+              value={formData.businessName}
+              onChange={handleChange}
+              required
+              sx={muiStyles}
+            />
+
+            {/* EMAIL */}
+            <TextField
+              fullWidth
+              label="Email Address"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              sx={muiStyles}
+            />
+
+            {/* PHONE */}
+            <TextField
+              fullWidth
+              label="Phone Number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              sx={muiStyles}
+            />
+
+            {/* BUSINESS TYPE DROPDOWN */}
+            <FormControl fullWidth required sx={muiStyles}>
+              <InputLabel>Business Type</InputLabel>
+              <Select
+                name="businessType"
+                value={formData.businessType}
+                label="Business Type"
+                onChange={handleChange}
+              >
+                <MenuItem value="">Select Business Type</MenuItem>
+                <MenuItem value="Manufacturer">Manufacturer</MenuItem>
+                <MenuItem value="Wholesaler">Wholesaler</MenuItem>
+                <MenuItem value="Retailer">Retailer</MenuItem>
+                <MenuItem value="Others">Others</MenuItem>
+              </Select>
+            </FormControl>
+
+            {/* CONDITIONAL FIELD */}
+            {(formData.businessType || "").toLowerCase() === "others" && (
+              <TextField
+                fullWidth
+                label="Please Specify Your Business"
+                name="otherBusiness"
+                value={formData.otherBusiness}
+                onChange={handleChange}
+                required
+                sx={muiStyles}
+              />
+            )}
 
             {/* MESSAGE */}
-            <textarea
+            <TextField
+              fullWidth
+              label="Tell us about your requirement (B2B / Bulk Order)"
               name="message"
-              rows="4"
-              placeholder="Share your experience with our jewellery..."
-              required
               value={formData.message}
               onChange={handleChange}
-              className="rounded-md w-full text-[#111111] border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
+              required
+              multiline
+              rows={4}
+              sx={muiStyles}
             />
 
-            {/* BUTTONS */}
-            <div className="flex gap-3 justify-end mt-4">
-
-              <button
-                type="button"
-                onClick={() => setOpenFeedback(false)}
-                className="px-5 py-2 border border-[#d6c8bd] rounded-md text-[#5b504a] hover:bg-gray-100 transition"
-              >
-                Cancel
-              </button>
-
-              <button
-                type="submit"
-                disabled={!isFormValid}
-                className={`
-                  px-5 py-2 rounded-md font-semibold transition
-                  ${isFormValid
-                    ? "bg-[#b28c49] text-white hover:bg-[#a07d3f]"
-                    : "bg-gray-200 text-gray-400 cursor-not-allowed"}
-                `}
-              >
-                Submit Feedback
-              </button>
-                  
-            </div>
-                  
+            {/* SUBMIT BUTTON */}
+            <button
+              type="submit"
+              disabled={!isFormValid}
+              className={`
+                rounded-md w-full text-xl py-3 font-semibold transition
+                ${isFormValid
+                  ? "bg-[#b28c49] text-white hover:bg-[#a07d3f]"
+                  : "bg-gray-200 text-gray-400 cursor-not-allowed"}
+              `}
+            >
+              Submit Enquiry
+            </button>
+                
           </form>
         </div>
 
@@ -305,5 +349,25 @@ function Contact() {
     </div>
   );
 }
+
+const muiStyles = {
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#d6c8bd",
+    },
+    "&:hover fieldset": {
+      borderColor: "#b28c49",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#b28c49",
+    },
+  },
+  "& .MuiInputLabel-root": {
+    color: "#7a665c",
+  },
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#b28c49",
+  },
+};
 
 export default Contact;
