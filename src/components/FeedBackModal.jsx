@@ -10,7 +10,7 @@ import {
 
 function FeedbackModal() {
   
-  const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+  const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL_FEEDBACK;
 
   const [openFeedback, setOpenFeedback] = useState(false);
 
