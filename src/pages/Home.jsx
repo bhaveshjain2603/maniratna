@@ -116,7 +116,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="text-center space-y-4 mt-10">
+        <section className="border-t border-[#d3c7bb]/40 text-center space-y-4 mt-20">
           <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] font-serifHeading">
             Share Your Experience
           </h2>
