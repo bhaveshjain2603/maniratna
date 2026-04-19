@@ -14,28 +14,32 @@ const collections = [
     description: 'Ornate designs with antique charm for morning and evening silhouettes.',
     image: victorianHero,
     buttonText: 'Explore Designs',
-    link: '/collections/victorian'
+    link: '/collections/victorian',
+    type: 'victorian'
   },
   {
     title: 'Indo-Western Collection',
     description: 'Lavish pieces inspired by celebrations and timeless unions.',
     image: indoHero,
     buttonText: 'View Collection',
-    link: '/collections/indo-western'
+    link: '/collections/indo-western',
+    type: 'indo'
   },
   {
     title: 'Temple Jewellery',
     description: 'Heritage motifs with handcrafted goldwork and graceful detailing.',
     image: templeHero,
     buttonText: 'Discover Collection',
-    link: '/collections/temple-heritage'
+    link: '/collections/temple-heritage',
+    type: 'temple'
   },
   {
     title: 'Minimal Edit',
     description: 'Refined, lightweight designs crafted for everyday elegance and modern sophistication.',
     image: minimalHero,
     buttonText: 'Shop Minimal',
-    link: '/collections/minimal-edit'
+    link: '/collections/minimal-edit',
+    type: 'minimal'
   }
 ]
 
@@ -100,7 +104,15 @@ function Home() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {collections.map(card => (
-              <CollectionCard key={card.title} title={card.title} description={card.description} image={card.image} buttonText={card.buttonText} link={card.link} />
+              <CollectionCard 
+                key={card.title} 
+                title={card.title} 
+                description={card.description} 
+                image={card.image} 
+                buttonText={card.buttonText} 
+                link={card.link}
+                type={card.type}
+              />
             ))}
           </div>
         </section>

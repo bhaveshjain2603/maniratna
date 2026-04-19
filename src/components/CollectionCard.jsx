@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
 
-function CollectionCard({ title, description, image, buttonText, link }) {
+function CollectionCard({ title, description, image, buttonText, link, type }) {
+
+  const getWhatsAppMessage = () => {
+    const base = "✨ Hello MANIRATNA JEWELS,";
+
+    switch (type) {
+      case "temple":
+        return `${base}%0A%0A🙏 I was exploring your Temple Jewellery collection and the craftsmanship truly impressed me 💎.%0A%0ACould you please share pricing and details?`;
+
+      case "victorian":
+        return `${base}%0A%0A👑 I absolutely loved your Victorian collection — the royal elegance really stood out 💎.%0A%0ACould you share price and more details?`;
+
+      case "indo":
+        return `${base}%0A%0A💫 Your Indo-Western collection feels very unique and stylish 💎.%0A%0AI would love to know pricing and availability.`;
+
+      case "minimal":
+        return `${base}%0A%0A🌿 I really liked your Minimal collection — simple and elegant 💎.%0A%0ACould you share the price and details?`;
+
+      default:
+        return `${base}%0A%0A💎 I'm interested in ${title}. Could you please share the price and details?`;
+    }
+  };
+
   return (
     <article className="group overflow-hidden border border-[#d7c8bb] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
       <div className="relative h-72 overflow-hidden">
@@ -25,7 +47,7 @@ function CollectionCard({ title, description, image, buttonText, link }) {
 
           {/* WHATSAPP CTA */}
           <a
-            href={`https://wa.me/919448793711?text=✨ Hello MANIRATNA JEWELS,%0A%0A💎 I'm interested in ${title} 💎 — this piece caught my attention.%0A%0ACould you please share the price and details?`}
+            href={`https://wa.me/919448793711?text=${getWhatsAppMessage()}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center border bg-[#b28c49] text-white justify-center gap-2 px-4 py-2 text-sm font-semibold transition rounded-md"
