@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import FeedbackModal from '../components/FeedbackModal';
+import FeedbackModal from '../components/FeedBackModal';
 import HeroCarousel from '../components/HeroCarousel'
 import CollectionCard from '../components/CollectionCard'
 import indoHero from '../../public/images/indo-western/necklaces/necklace.jpg'
