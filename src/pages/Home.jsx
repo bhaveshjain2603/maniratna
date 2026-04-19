@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import FeedbackModal from '../components/FeedBackModal';
 import HeroCarousel from '../components/HeroCarousel'
 import CollectionCard from '../components/CollectionCard'
