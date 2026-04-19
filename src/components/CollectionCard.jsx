@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CollectionCard({ title, description, image, buttonText, link }) {
   return (
     <article className="group overflow-hidden border border-[#d7c8bb] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
