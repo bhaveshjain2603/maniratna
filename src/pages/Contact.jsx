@@ -98,103 +98,72 @@ function Contact() {
             Business Enquiry
           </h2>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="space-y-4">
 
-            {/* FULL NAME */}
+            {/* NAME */}
             <input
               type="text"
-              name="fullName"
-              placeholder="Full Name"
+              name="name"
+              placeholder="Your Name"
               required
-              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.fullName}
               onChange={handleChange}
+              className="rounded-md w-full text-[#111111] border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
             />
 
-            {/* BUSINESS NAME */}
+            {/* COLLECTION INPUT */}
             <input
               type="text"
-              name="businessName"
-              placeholder="Business Name"
+              name="collection"
+              placeholder="Jewellery Collection"
               required
-              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
-              value={formData.businessName}
+              value={formData.collection}
               onChange={handleChange}
+              className="rounded-md w-full text-[#111111] border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
             />
 
-            {/* EMAIL */}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
-              value={formData.email}
-              onChange={handleChange}
-            />
-
-            {/* BUSINESS TYPE INPUT */}
-            <input
-              type="text"
-              name="businessType"
-              placeholder="Business (Wholesaler / Retailer / Others"
-              required
-              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
-              value={formData.businessType}
-              onChange={handleChange}
-            />
+            {/* HELPER TEXT (GUIDANCE) */}
             <p className="text-xs text-[#7a665c] ml-1">
-  Manufacturer / Wholesaler / Retailer / Others
-</p>
-
-            {/* CONDITIONAL FIELD */}
-            {formData.businessType.trim().toLowerCase() === "others" && (
-              <input
-                type="text"
-                name="otherBusiness"
-                placeholder="Please specify your business"
-                className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
-                value={formData.otherBusiness}
-                onChange={handleChange}
-              />
-            )}
-
-            {/* PHONE */}
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              required
-              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
-              value={formData.phone}
-              onChange={handleChange}
-            />
+              Temple Heritage / Victorian Royalty / Indo-Western / Minimal Edit
+            </p>
 
             {/* MESSAGE */}
             <textarea
               name="message"
               rows="4"
-              placeholder="Tell us about your requirement (B2B / Bulk Order)"
+              placeholder="Share your experience with our jewellery..."
               required
-              className="rounded-md w-full text-white border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
               value={formData.message}
               onChange={handleChange}
+              className="rounded-md w-full text-[#111111] border border-[#d6c8bd] p-3 outline-none focus:border-[#b28c49] placeholder:text-gray-400"
             />
 
-            {/* SUBMIT */}
-            <button
-              type="submit"
-              disabled={!isFormValid}
-              className={`
-                rounded-md w-full border text-xl py-3 font-semibold transition
-                ${isFormValid
-                  ? "border-[#b28c49] bg-[#b28c49] text-white hover:bg-[#a07d3f]"
-                  : "border-gray-300 bg-gray-200 text-gray-400 cursor-not-allowed"}
-              `}
-            >
-              Submit Enquiry
-            </button>
-          
+            {/* BUTTONS */}
+            <div className="flex gap-3 justify-end mt-4">
+
+              <button
+                type="button"
+                onClick={() => setOpenFeedback(false)}
+                className="px-5 py-2 border border-[#d6c8bd] rounded-md text-[#5b504a] hover:bg-gray-100 transition"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="submit"
+                disabled={!isFormValid}
+                className={`
+                  px-5 py-2 rounded-md font-semibold transition
+                  ${isFormValid
+                    ? "bg-[#b28c49] text-white hover:bg-[#a07d3f]"
+                    : "bg-gray-200 text-gray-400 cursor-not-allowed"}
+                `}
+              >
+                Submit Feedback
+              </button>
+                  
+            </div>
+                  
           </form>
         </div>
 
