@@ -50,7 +50,6 @@ function Home() {
     <div className="relative overflow-hidden bg-[#f7f1ed]">
       <section className="relative">
         <HeroCarousel />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#f7f1ed] to-transparent" />
       </section>
 
       <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 md:px-8">
