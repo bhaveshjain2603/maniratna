@@ -45,7 +45,7 @@ function FeedbackModal() {
       <div className="text-center mt-10">
         <button
           onClick={() => setOpenFeedback(true)}
-          className="border border-[#b28c49] text-xl sm:text-2xl px-6 py-3 font-semibold hover:bg-[#b28c49] hover:text-white transition rounded-md"
+          className="border border-[#b28c49] text-xl px-6 py-3 font-semibold hover:bg-[#b28c49] hover:text-white transition rounded-md"
         >
           Share Feedback
         </button>

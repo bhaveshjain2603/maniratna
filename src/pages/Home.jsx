@@ -12,22 +12,26 @@ const collections = [
   {
     title: 'Victorian Collection',
     description: 'Ornate designs with antique charm for morning and evening silhouettes.',
-    image: victorianHero
+    image: victorianHero,
+    buttonText: 'Explore Designs'
   },
   {
     title: 'Indo-Western Collection',
     description: 'Lavish pieces inspired by celebrations and timeless unions.',
-    image: indoHero
+    image: indoHero,
+    buttonText: 'View Collection'
   },
   {
     title: 'Temple Jewellery',
     description: 'Heritage motifs with handcrafted goldwork and graceful detailing.',
-    image: templeHero
+    image: templeHero,
+    buttonText: 'Discover Collection'
   },
   {
     title: 'Minimal Edit',
     description: 'Refined, lightweight designs crafted for everyday elegance and modern sophistication.',
-    image: minimalHero
+    image: minimalHero,
+    buttonText: 'Shop Minimal'
   }
 ]
 

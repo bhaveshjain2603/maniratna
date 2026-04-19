@@ -11,6 +11,9 @@ function CollectionCard({ title, description, image }) {
       <div className="border-t border-[#e9e0d7] px-6 py-6">
         <h3 className="text-lg font-semibold text-[#111111]">{title}</h3>
         <p className="mt-3 text-sm leading-7 text-[#5b504a]">{description}</p>
+        <button className="mt-4 text-[#b28c49] font-semibold hover:text-[#a07d3f] transition">
+          {buttonText}
+        </button>
       </div>
     </article>
   )
