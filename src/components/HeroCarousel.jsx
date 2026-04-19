@@ -32,7 +32,7 @@ function HeroCarousel() {
   const slide = slides[current]
 
   return (
-    <div className="relative w-full h-[75vh] sm:h-[85vh] overflow-hidden">
+    <div className="relative w-full h-[70vh] sm:h-[75vh] lg:h-[85vh] overflow-hidden">
 
       {/* IMAGE */}
       <img
