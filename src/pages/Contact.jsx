@@ -14,10 +14,10 @@ function Contact() {
   const [formData, setFormData] = useState({
     fullName: '',
     businessName: '',
-    email: '',
-    phone: '',
     businessType: '',   // ✅ ADD THIS
     otherBusiness: '',  // ✅ ADD THIS
+    email: '',
+    phone: '',
     message: ''
   });
 
@@ -69,9 +69,9 @@ function Contact() {
   const isFormValid =
     (formData.fullName || '').trim() !== '' &&
     (formData.businessName || '').trim() !== '' &&
+    (formData.businessType || '').trim() !== '' &&
     (formData.email || '').trim() !== '' &&
     (formData.phone || '').trim() !== '' &&
-    (formData.businessType || '').trim() !== '' &&
     (formData.message || '').trim() !== '' &&
     (
       (formData.businessType || '').trim().toLowerCase() !== "others" ||
@@ -129,29 +129,6 @@ function Contact() {
               sx={muiStyles}
             />
 
-            {/* EMAIL */}
-            <TextField
-              fullWidth
-              label="Email Address"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              sx={muiStyles}
-            />
-
-            {/* PHONE */}
-            <TextField
-              fullWidth
-              label="Phone Number"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              sx={muiStyles}
-            />
-
             {/* BUSINESS TYPE DROPDOWN */}
             <FormControl fullWidth required sx={muiStyles}>
               <InputLabel>Business Type</InputLabel>
@@ -181,6 +158,29 @@ function Contact() {
                 sx={muiStyles}
               />
             )}
+
+            {/* EMAIL */}
+            <TextField
+              fullWidth
+              label="Email Address"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              sx={muiStyles}
+            />
+
+            {/* PHONE */}
+            <TextField
+              fullWidth
+              label="Phone Number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              sx={muiStyles}
+            />
 
             {/* MESSAGE */}
             <TextField

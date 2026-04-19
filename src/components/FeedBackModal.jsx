@@ -92,7 +92,14 @@ function FeedbackModal() {
                   />
 
                   {/* DROPDOWN */}
-                  <FormControl fullWidth required sx={muiStyles}>
+                  <FormControl fullWidth required sx={{
+                    textAlign: "left",
+                    '& .MuiSelect-select': {
+                        textAlign: 'left',
+                        display: 'flex',
+                        alignItems: 'center'
+                    }
+                    }}>
                     <InputLabel>Jewellery Collection</InputLabel>
                     <Select
                       name="collection"
