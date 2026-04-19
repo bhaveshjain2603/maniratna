@@ -65,7 +65,7 @@ function FeedbackModal() {
 
         toast.dismiss(loadingToast);
 
-        toast.success("Feedback Submitted Successfully 💎");
+        toast.success("Feedback Submitted Successfully");
 
         setFeedbackData({
         name: "",
