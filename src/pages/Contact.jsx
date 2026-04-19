@@ -221,6 +221,12 @@ function Contact() {
                 WhatsApp
               </p>
               <a
+                href="https://wa.me/919845353046"
+                className="block mt-2 text-lg font-semibold text-[#111]"
+              >
+                +91 98453 53046
+              </a>
+              <a
                 href="https://wa.me/919448793711"
                 className="block mt-2 text-lg font-semibold text-[#111]"
               >
@@ -233,7 +239,10 @@ function Contact() {
                 Working Hours
               </p>
               <p className="mt-2 text-[#5b504a]">
-                Mon – Sat: 10 AM – 8 PM
+                Mon – Sun: 10 AM – 8 PM
+              </p>
+              <p className="mt-2 text-[#5b504a]">
+                Tuesday Holiday
               </p>
             </div>
 
