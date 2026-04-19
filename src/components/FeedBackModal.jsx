@@ -12,6 +12,7 @@ function FeedbackModal() {
 
   const [feedbackData, setFeedbackData] = useState({
     name: "",
+    businessName: "",
     collection: "",
     message: ""
   });
@@ -34,6 +35,7 @@ function FeedbackModal() {
 
     setFeedbackData({
       name: "",
+      businessName: "",
       collection: "",
       message: ""
     });
@@ -43,6 +45,7 @@ function FeedbackModal() {
 
   const isFormValid =
     feedbackData.name.trim() !== "" &&
+    feedbackData.businessName.trim() !== "" &&
     feedbackData.collection.trim() !== "" &&
     feedbackData.message.trim() !== "";
   
@@ -91,6 +94,16 @@ function FeedbackModal() {
                     sx={muiStyles}
                   />
 
+                  <TextField
+                    fullWidth
+                    label="Business Name"
+                    name="businessName"
+                    value={feedbackData.businessName}
+                    onChange={handleChange}
+                    required
+                    sx={muiStyles}
+                  />
+
                   {/* DROPDOWN */}
                   <FormControl fullWidth required sx={{
                     textAlign: "left",
@@ -110,7 +123,7 @@ function FeedbackModal() {
                       <MenuItem value="">Select Collection</MenuItem>
                       <MenuItem value="Temple Heritage">Temple Heritage</MenuItem>
                       <MenuItem value="Victorian Royalty">Victorian Royalty</MenuItem>
-                      <MenuItem value="Indo-Western">Indo-Western</MenuItem>
+                      <MenuItem value="Indo-Western">Indo-Western Elegance</MenuItem>
                       <MenuItem value="Minimal Edit">Minimal Edit</MenuItem>
                     </Select>
                   </FormControl>
