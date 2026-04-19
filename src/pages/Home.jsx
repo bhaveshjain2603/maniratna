@@ -116,7 +116,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="text-center space-y-4">
+        <section className="text-center space-y-4 mt-10">
           <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] font-serifHeading">
             Share Your Experience
           </h2>
@@ -126,12 +126,6 @@ function Home() {
             Share your thoughts and let us continue crafting pieces that reflect elegance, trust, and timeless beauty.
           </p>
                     
-          <button
-            onClick={() => setOpenFeedback(true)}
-            className="mt-4 border border-[#b28c49] px-6 py-3 font-semibold text-[#111111] hover:bg-[#b28c49] hover:text-white transition rounded-md"
-          >
-            Share Feedback
-          </button>
           <FeedbackModal 
             openFeedback={openFeedback} 
             setOpenFeedback={setOpenFeedback} 
