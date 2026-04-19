@@ -54,7 +54,7 @@ function HeroCarousel() {
           </p>
 
           {/* CTA BUTTONS */}
-          <div className="mt-6 flex gap-4 flex-wrap">
+          {/* <div className="mt-6 flex gap-4 flex-wrap">
             <a
               href="/collections"
               className="bg-white text-[#111] px-6 py-3 text-sm font-semibold hover:bg-[#f2f2f2] transition"
@@ -68,7 +68,7 @@ function HeroCarousel() {
             >
               Chat on WhatsApp
             </a>
-          </div>
+          </div> */}
 
         </div>
       </div>
