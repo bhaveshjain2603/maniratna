@@ -54,7 +54,7 @@ function FeedbackModal() {
       const loadingToast = toast.loading("Submitting Feedback...");
   
       try {
-        await fetch(SHEET_URL, {
+        const response = await fetch(SHEET_URL, {
             method: "POST",
             mode: "no-cors",
             headers: {
