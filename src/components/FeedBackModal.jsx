@@ -21,6 +21,26 @@ function FeedbackModal() {
     message: ""
   });
 
+    const muiStyles = {
+        "& .MuiOutlinedInput-root": {
+        "& fieldset": {
+            borderColor: "#d6c8bd",
+        },
+        "&:hover fieldset": {
+            borderColor: "#b28c49",
+        },
+        "&.Mui-focused fieldset": {
+            borderColor: "#b28c49",
+        },
+        },
+        "& .MuiInputLabel-root": {
+        color: "#7a665c",
+        },
+        "& .MuiInputLabel-root.Mui-focused": {
+        color: "#b28c49",
+        },
+    };
+
   const handleChange = (e) => {
     setFeedbackData({
       ...feedbackData,
@@ -40,14 +60,14 @@ function FeedbackModal() {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(feedbackData),
         });
     
         toast.dismiss(loadingToast);
     
         toast.success("Feedback Submitted Successfully");
     
-        setFormData({
+        setFeedbackData({
         name: '',
         businessName: '',
         collection: '',
@@ -61,7 +81,6 @@ function FeedbackModal() {
           toast.error("Submission failed. Try again.");
       }
     };
-  };
 
   const isFormValid =
     feedbackData.name.trim() !== "" &&
@@ -192,9 +211,10 @@ function FeedbackModal() {
         </div>
       )}
     </>
-  );
+);
+}
 
-  const muiStyles = {
+const muiStyles = {
     "& .MuiOutlinedInput-root": {
     "& fieldset": {
         borderColor: "#d6c8bd",
