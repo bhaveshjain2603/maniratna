@@ -55,6 +55,12 @@ function Home() {
               <Link to="/collections" className="inline-flex items-center justify-center border border-transparent bg-matteBlack px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#1a1a1a]">
                 Explore Collections
               </Link>
+              <a
+                href="https://wa.me/919448793711?text=Hello%20MANIRATNA%20JEWELS%2C%20I%20am%20interested%20in%20your%20collection."
+                className="inline-flex items-center justify-center border border-[#25d366] bg-[#25d366] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#128c7e]"
+              >
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
           <div className="border border-[#d3c7bb]/60 bg-white/90 p-8 shadow-sm">

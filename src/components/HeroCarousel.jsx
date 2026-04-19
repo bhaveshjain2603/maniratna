@@ -42,24 +42,6 @@ function HeroCarousel() {
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 text-white sm:px-10">
         <h2 className="mt-4 max-w-3xl text-2xl font-semibold leading-tight sm:text-5xl font-serifHeading">{slide.title}</h2>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-[#efe7db] sm:text-base">{slide.subtitle}</p>
-        {/* 🔥 CTA BUTTONS */}
-        <div className="mt-6 flex flex-col sm:flex-row gap-4">
-          
-          <a
-            href="/collections"
-            className="px-6 py-3 border border-[#b28c49] text-white text-sm font-semibold rounded-md hover:bg-[#b28c49] transition text-center"
-          >
-            Explore Collection
-          </a>
-        
-          <a
-            href="https://wa.me/919448793711?text=Hello%20MANIRATNA%20JEWELS%2C%20I%20am%20interested%20in%20your%20collection."
-            className="px-6 py-3 bg-[#25d366] text-white text-sm font-semibold rounded-md hover:bg-[#128c7e] transition text-center"
-          >
-            Chat on WhatsApp
-          </a>
-        
-        </div>
       </div>
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-3">
         {slides.map((_, index) => (
