@@ -56,7 +56,6 @@ function FeedbackModal() {
       try {
         const response = await fetch(SHEET_URL, {
             method: "POST",
-            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json",
             },
