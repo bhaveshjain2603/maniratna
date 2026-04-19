@@ -41,9 +41,6 @@ function HeroCarousel() {
         className="w-full h-full object-cover object-[center_30%] transition duration-700"
       />
 
-      {/* SOFT OVERLAY (LUXURY STYLE) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/70 via-[#111111]/20 to-transparent" />
-
       {/* CONTENT (CENTER-LEFT, PREMIUM POSITIONING) */}
       <div className="absolute inset-0 flex items-end lg:items-center px-6 sm:px-12 lg:px-20 pb-10 lg:pb-0">
         <div className="max-w-2xl text-white">
