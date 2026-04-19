@@ -7,19 +7,19 @@ function CollectionCard({ title, description, image, buttonText, link, type }) {
 
     switch (type) {
       case "temple":
-        return `${base}%0A%0A🙏 I was exploring your Temple Jewellery collection and the craftsmanship truly impressed me 💎.%0A%0ACould you please share pricing and details?`;
+        return `${base}%0A%0A🙏 I was exploring your Temple Jewellery collection and the traditional craftsmanship truly caught my attention 💎.%0A%0AI would love to know more about pricing, designs, and availability.%0A%0ALooking forward to your response.`;
 
       case "victorian":
-        return `${base}%0A%0A👑 I absolutely loved your Victorian collection — the royal elegance really stood out 💎.%0A%0ACould you share price and more details?`;
+        return `${base}%0A%0A👑 I came across your Victorian collection and absolutely loved the royal elegance and antique finish 👑.%0A%0ACould you please share the price and more details about these designs?`;
 
       case "indo":
-        return `${base}%0A%0A💫 Your Indo-Western collection feels very unique and stylish 💎.%0A%0AI would love to know pricing and availability.`;
+        return `${base}%0A%0A💫 Your Indo-Western collection feels so unique and versatile — it instantly caught my attention 💎.%0A%0AI would love to know more about pricing and available designs.`;
 
       case "minimal":
-        return `${base}%0A%0A🌿 I really liked your Minimal collection — simple and elegant 💎.%0A%0ACould you share the price and details?`;
+        return `${base}%0A%0A🌿 I really liked your Minimal collection — elegant, subtle, and perfect for everyday wear 💎.%0A%0ACould you share pricing and details for these pieces?`;
 
       default:
-        return `${base}%0A%0A💎 I'm interested in ${title}. Could you please share the price and details?`;
+        return `${base}%0A%0A💎 I'm interested in ${title} — this piece caught my attention. Could you please share the price and details?`;
     }
   };
 
