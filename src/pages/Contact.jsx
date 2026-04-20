@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 function Contact() {
-  const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+  const SHEET_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL_RESPONSES;
 
   const [formData, setFormData] = useState({
     fullName: '',
