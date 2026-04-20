@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react'
-import carouselOne from '../../public/images/carousel1.jpg'
+import heroMobile from '../../public/images/hero-mobile.jpg'
 
 const slides = [
   {
     title: 'Crafted to Make You Stand Out',
     subtitle: 'Timeless jewellery for graceful moments.',
-    image: carouselOne
+    image: heroMobile
   },
   {
     title: 'Heritage Jewellery With Modern Poise',
     subtitle: 'A refined collection designed for elegant occasions.',
-    image: carouselOne
+    image: heroMobile
   },
   {
     title: 'Luxury That Feels Personal',
     subtitle: 'Curated pieces for B2B partnerships and discerning customers.',
-    image: carouselOne
+    image: heroMobile
   }
 ]
 
