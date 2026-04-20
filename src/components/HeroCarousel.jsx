@@ -20,7 +20,7 @@ function HeroCarousel() {
       </picture>
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent lg:bg-gradient-to-r lg:from-[#111111]/10 lg:via-[#111111]/20 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent lg:bg-gradient-to-t lg:from-[#111111]/70 lg:via-[#111111]/20 lg:to-transparent" />
 
       {/* CONTENT */}
       <div className="absolute inset-0 flex items-end px-6 sm:px-12 pb-10">
