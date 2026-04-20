@@ -18,6 +18,7 @@ function Contact() {
     otherBusiness: '',  // ✅ ADD THIS
     email: '',
     phone: '',
+    collectionType: '',
     message: ''
   });
 
@@ -54,6 +55,7 @@ function Contact() {
         otherBusiness: '',  // ✅ RESET THIS
         email: '',
         phone: '',
+        collectionType: '',
         message: ''
       });
 
@@ -72,6 +74,7 @@ function Contact() {
     (formData.businessType || '').trim() !== '' &&
     (formData.email || '').trim() !== '' &&
     (formData.phone || '').trim() !== '' &&
+    (formData.collectionType || '').trim() !== '' &&
     (formData.message || '').trim() !== '' &&
     (
       (formData.businessType || '').trim().toLowerCase() !== "others" ||
@@ -181,6 +184,30 @@ function Contact() {
               required
               sx={muiStyles}
             />
+
+            <FormControl fullWidth required sx={{
+              textAlign: "left",
+              '& .MuiSelect-select': {
+                  textAlign: 'left',
+                  display: 'flex',
+                  alignItems: 'center'
+              }
+              }}>
+              <InputLabel>Preferred Collection</InputLabel>
+              <Select
+                name="collectionType"
+                value={formData.collectionType}
+                label="Preferred Collection"
+                onChange={handleChange}
+              >
+                <MenuItem value="">Select Collection</MenuItem>
+                <MenuItem value="Temple Heritage">Temple Heritage</MenuItem>
+                <MenuItem value="Victorian Royalty">Victorian Royalty</MenuItem>
+                <MenuItem value="Indo-Western">Indo-Western Elegance</MenuItem>
+                <MenuItem value="Minimal Edit">The Minimal Edit</MenuItem>
+                <MenuItem value="All Collections">All of the Above</MenuItem>
+              </Select>
+            </FormControl>
 
             {/* MESSAGE */}
             <TextField

@@ -16,6 +16,7 @@ function FeedbackModal() {
 
   const [feedbackData, setFeedbackData] = useState({
     name: "",
+    email: "",
     businessName: "",
     collection: "",
     message: ""
@@ -69,6 +70,7 @@ function FeedbackModal() {
 
         setFeedbackData({
         name: "",
+        email: "",
         businessName: "",
         collection: "",
         message: ""
@@ -86,6 +88,7 @@ function FeedbackModal() {
 
   const isFormValid =
       (feedbackData.name || "").trim() !== "" &&
+      (feedbackData.email || "").trim() !== "" &&
       (feedbackData.businessName || "").trim() !== "" &&
       (feedbackData.collection || "").trim() !== "" &&
       (feedbackData.message || "").trim() !== "";
@@ -137,6 +140,16 @@ function FeedbackModal() {
 
                   <TextField
                     fullWidth
+                    label="Email Address"
+                    name="email"
+                    value={feedbackData.email}
+                    onChange={handleChange}
+                    required
+                    sx={muiStyles}
+                  />
+
+                  <TextField
+                    fullWidth
                     label="Business Name"
                     name="businessName"
                     value={feedbackData.businessName}
@@ -165,7 +178,7 @@ function FeedbackModal() {
                       <MenuItem value="Temple Heritage">Temple Heritage</MenuItem>
                       <MenuItem value="Victorian Royalty">Victorian Royalty</MenuItem>
                       <MenuItem value="Indo-Western">Indo-Western Elegance</MenuItem>
-                      <MenuItem value="Minimal Edit">Minimal Edit</MenuItem>
+                      <MenuItem value="Minimal Edit">The Minimal Edit</MenuItem>
                     </Select>
                   </FormControl>
 
