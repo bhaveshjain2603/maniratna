@@ -23,7 +23,7 @@ function HeroCarousel() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent lg:bg-gradient-to-r lg:from-[#111111]/70 lg:via-[#111111]/20 lg:to-transparent" />
 
       {/* CONTENT */}
-      <div className="absolute inset-0 flex items-end lg:items-center px-6 sm:px-12 lg:px-20 pb-10 lg:pb-0">
+      <div className="absolute inset-0 flex items-end px-6 sm:px-12 pb-10">
         <div className="max-w-2xl text-white">
 
           <h2 className="text-3xl sm:text-5xl font-semibold leading-tight font-serifHeading">
