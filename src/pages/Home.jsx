@@ -98,7 +98,7 @@ function Home() {
               <h2 className="mt-4 text-3xl font-semibold text-[#111111] font-serifHeading">Premium collections for every chapter.</h2>
             </div>
             <p className="max-w-xl text-sm leading-7 text-[#5b504a]">
-              Explore Victorian, bridal, and temple jewellery designed for both retail and bulk engagements.
+              Explore Victorian, Bridal, Temple and Minimal Jewellery designed for both retail and bulk engagements.
             </p>
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
