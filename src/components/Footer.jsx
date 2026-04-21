@@ -39,7 +39,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <p className="mt-10 text-xs uppercase tracking-[0.25em] text-[#7a6b62]">© 2026 MANIRATNA JEWELS. Jewels Rooted In Culture, Styled For You.</p>
+        <p className="mt-10 text-xs uppercase tracking-[0.25em] text-[#7a6b62]">© 2026 MANIRATNA JEWELS. <br /> Jewels Rooted In Culture, Styled For You.</p>
       </div>
     </footer>
   )
