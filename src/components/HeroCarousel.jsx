@@ -27,7 +27,7 @@ function HeroCarousel() {
         <div className="max-w-2xl text-white">
 
           <h2 className="text-3xl sm:text-5xl font-semibold leading-tight font-serifHeading">
-            Crafted to Make You Stand Out
+            Inspired by Tradition, Crafted for Today
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-[#f1e8dd] leading-7">
