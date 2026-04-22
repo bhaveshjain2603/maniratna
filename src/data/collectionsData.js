@@ -1522,7 +1522,102 @@ const collections = [
         ]
       }
     ]
-  }
+  },
+  {
+  key: 'idols',
+  title: 'Divine Idols Collection',
+  subtitle: 'Sacred idols crafted with devotion and timeless artistry.',
+  description:
+    'A spiritual collection featuring beautifully crafted idols of Hindu deities, designed for homes, temples, and gifting.',
+
+  categories: [
+    {
+      key: 'ganesha',
+      title: 'Lord Ganesha Idols',
+      subtitle: 'Symbols of wisdom and prosperity',
+      description:
+        'Elegant Ganesha idols crafted with intricate detailing and divine symbolism.',
+
+      products: [
+        {
+          name: 'Classic Ganesha Idol',
+          description:
+            'A beautifully sculpted Lord Ganesha idol designed for home temples and gifting.',
+          productCode: 'ID-GN-0001',
+          imageCount: 2,
+          category: 'idols/ganesha',
+          weight: '850g',
+          color: 'Antique Gold',
+          polish: 'Matte Finish',
+          material: 'Brass',
+          dimensions: '8 inches'
+        },
+
+        {
+          name: 'Royal Ganesha Idol',
+          description:
+            'A premium handcrafted Ganesha idol with intricate detailing.',
+          productCode: 'ID-GN-0002',
+          imageCount: 2,
+          category: 'idols/ganesha',
+          weight: '1.2kg',
+          color: 'Gold',
+          polish: 'Antique Finish',
+          material: 'Brass',
+          dimensions: '10 inches'
+        }
+      ]
+    },
+
+    {
+      key: 'lakshmi',
+      title: 'Lakshmi Idols',
+      subtitle: 'Goddess of wealth and prosperity',
+      description:
+        'Beautiful Lakshmi idols designed to bring elegance and blessings.',
+
+      products: [
+        {
+          name: 'Traditional Lakshmi Idol',
+          description:
+            'A divine Lakshmi idol crafted with premium detailing.',
+          productCode: 'ID-LK-0001',
+          imageCount: 2,
+          category: 'idols/lakshmi',
+          weight: '900g',
+          color: 'Gold',
+          polish: 'Gloss Finish',
+          material: 'Brass',
+          dimensions: '9 inches'
+        }
+      ]
+    },
+
+    {
+      key: 'krishna',
+      title: 'Krishna Idols',
+      subtitle: 'Graceful representations of Lord Krishna',
+      description:
+        'Artistic Krishna idols inspired by devotion and tradition.',
+
+      products: [
+        {
+          name: 'Flute Krishna Idol',
+          description:
+            'A beautifully detailed Krishna idol playing flute.',
+          productCode: 'ID-KR-0001',
+          imageCount: 2,
+          category: 'idols/krishna',
+          weight: '700g',
+          color: 'Antique Gold',
+          polish: 'Antique Finish',
+          material: 'Brass',
+          dimensions: '8 inches'
+        }
+      ]
+    }
+  ]
+}
 ]
 
 export function getCollectionByKey(key) {
