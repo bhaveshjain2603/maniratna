@@ -64,7 +64,7 @@ function App() {
 
               {/* Idol routes */}
               <Route
-                path="/collections/idols/:categoryId?"
+                path="/collections/idols/:collectionId?"
                 element={<CollectionDetail />}
               />
 
