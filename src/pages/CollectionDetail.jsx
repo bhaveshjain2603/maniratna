@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { getCollectionByKey } from '../data/collectionsData'
+import { getCollectionByKey } from '../data/collectionsData' 
 import { getImagePaths, getPrimaryImage } from '../utils/imageUtils'
 import { fetchCollections } from '../utils/fetchProducts'
 
