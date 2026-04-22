@@ -68,7 +68,7 @@ function CollectionDetail() {
       title = category.title
       subtitle = category.subtitle
       description = category.description
-      backLink = `/collections/${collectionId}/categories`
+      backLink = `/collections/jewellery/${collectionId}/categories`
     }
   } else {
     backLink = '/collections'
