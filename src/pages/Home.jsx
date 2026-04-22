@@ -52,8 +52,8 @@ const idolCollections = [
     buttonText: "Explore Collection",
     link: "/collections/idols/ganesha",
     type: "idol"
-  },
-  {
+  }
+ /* {
     title: "Sacred Shiva",
     description: "Traditional Shiva idols inspired by temple artistry.",
     image: ganeshaImage,
@@ -68,7 +68,7 @@ const idolCollections = [
     buttonText: "Explore Collection",
     link: "/collections/idols/lakshmi",
     type: "idol"
-  }
+  } */
 ];
 
 function Home() {
