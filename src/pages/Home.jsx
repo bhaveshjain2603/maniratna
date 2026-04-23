@@ -7,7 +7,6 @@ import indoHero from '../../public/images/indo-western/necklaces/necklace.jpg'
 import templeHero from '../../public/images/temple-heritage/hero.jpg'
 import victorianHero from '../../public/images/victorian-royalty/Victorian.jpg'
 import minimalHero from '../../public/images/minimal-edit/minimal.jpg'
-import ganeshaImage from '../../public/images/idols/ganesha/ganesha.jpg'
 
 const collections = [
   {
@@ -44,6 +43,7 @@ const collections = [
   }
 ]
 
+<<<<<<< HEAD
 const idolCollections = [
   {
     title: "Divine Ganesha",
@@ -71,6 +71,8 @@ const idolCollections = [
   } */
 ];
 
+=======
+>>>>>>> 3c8da26 (Updated files)
 function Home() {
   const [openFeedback, setOpenFeedback] = useState(false);
 
@@ -137,44 +139,6 @@ function Home() {
                 description={card.description} 
                 image={card.image} 
                 buttonText={card.buttonText} 
-                link={card.link}
-                type={card.type}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-20">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-
-            {/* LEFT CONTENT */}
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">
-                Sacred Editions
-              </p>
-
-              <h2 className="mt-4 text-3xl font-semibold text-[#111111] font-serifHeading">
-                Timeless divine idols crafted for sacred spaces.
-              </h2>
-            </div>
-
-            {/* RIGHT DESCRIPTION */}
-            <p className="max-w-xl text-sm leading-7 text-[#5b504a]">
-              Discover intricately designed South Indian gold-finish idols that 
-              celebrate devotion, heritage, and artistry—perfect for gifting, 
-              pooja spaces, and collectors of timeless craftsmanship.
-            </p>
-          </div>
-
-          {/* GRID */}
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {idolCollections.map((card) => (
-              <CollectionCard
-                key={card.title}
-                title={card.title}
-                description={card.description}
-                image={card.image}
-                buttonText={card.buttonText}
                 link={card.link}
                 type={card.type}
               />

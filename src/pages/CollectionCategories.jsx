@@ -24,7 +24,7 @@ function CollectionCategories() {
       <div className="mx-auto max-w-7xl px-6 py-20 text-center md:px-8">
         <p className="text-sm uppercase tracking-[0.35em] text-[#7a665c]">Collection not found</p>
         <h1 className="mt-6 text-4xl font-semibold text-[#111111]">The collection you are looking for is unavailable.</h1>
-        <Link to="/collections/jewellery" className="mt-8 inline-flex rounded-md border border-[#b28c49] bg-white px-6 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]">
+        <Link to="/collections" className="mt-8 inline-flex rounded-md border border-[#b28c49] bg-white px-6 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]">
           Back to Collections
         </Link>
       </div>
@@ -46,7 +46,7 @@ function CollectionCategories() {
           Explore different categories within the {collection?.title || ""} collection to find the perfect piece.
         </p>
         <Link
-          to="/collections/jewellery"
+          to="/collections"
           className="inline-flex rounded-md border border-[#b28c49] bg-white px-6 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]"
         >
           Back to Collections
@@ -102,7 +102,7 @@ function CollectionCategories() {
                     </p>
 
                     <Link
-                      to={`/collections/jewellery/${collectionId}/${category.key}`}
+                      to={`/collections/${collectionId}/${category.key}`}
                       className="mt-6 inline-flex items-center justify-center rounded-md border border-[#b28c49] px-5 py-3 text-sm font-semibold text-matteBlack transition hover:bg-[#f4ebe4]"
                     >
                       Explore More
