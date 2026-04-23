@@ -43,36 +43,6 @@ const collections = [
   }
 ]
 
-<<<<<<< HEAD
-const idolCollections = [
-  {
-    title: "Divine Ganesha",
-    description: "Intricately crafted Ganesha idols designed for prosperity and gifting.",
-    image: ganeshaImage,
-    buttonText: "Explore Collection",
-    link: "/collections/idols/ganesha",
-    type: "idol"
-  }
- /* {
-    title: "Sacred Shiva",
-    description: "Traditional Shiva idols inspired by temple artistry.",
-    image: ganeshaImage,
-    buttonText: "Explore Collection",
-    link: "/collections/idols/shiva",
-    type: "idol"
-  },
-  {
-    title: "Lakshmi Blessings",
-    description: "Elegant Lakshmi idols symbolizing wealth and positivity.",
-    image: ganeshaImage,
-    buttonText: "Explore Collection",
-    link: "/collections/idols/lakshmi",
-    type: "idol"
-  } */
-];
-
-=======
->>>>>>> 3c8da26 (Updated files)
 function Home() {
   const [openFeedback, setOpenFeedback] = useState(false);
 
