@@ -8,7 +8,6 @@ import Collections from './pages/Collections'
 import CollectionCategories from './pages/CollectionCategories'
 import CollectionDetail from './pages/CollectionDetail'
 import JewelleryCollections from './pages/JewelleryCollections'
-import IdolCollections from './pages/IdolCollections'
 import Contact from './pages/Contact'
 
 function App() {
@@ -49,25 +48,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/collections" element={<Collections />} />
-              <Route path="/collections/jewellery" element={<JewelleryCollections />} />
-              <Route path="/collections/idols" element={<IdolCollections />} />
-             
-              {/* Jewellery sub routes */}
-              <Route 
-                path="/collections/jewellery/:collectionId/categories" 
-                element={<CollectionCategories />} 
-              />
-              <Route 
-                path="/collections/jewellery/:collectionId/:categoryId?" 
-                element={<CollectionDetail />} 
-              />
-
-              {/* Idol routes */}
-              <Route
-                path="/collections/idols/:collectionId?"
-                element={<CollectionDetail />}
-              />
-
+              <Route path="/collections/:collectionId/categories" element={<CollectionCategories />} />
+              <Route path="/collections/:collectionId/:categoryId?" element={<CollectionDetail />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
