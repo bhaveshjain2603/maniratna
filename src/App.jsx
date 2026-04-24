@@ -7,7 +7,6 @@ import About from './pages/About'
 import Collections from './pages/Collections'
 import CollectionCategories from './pages/CollectionCategories'
 import CollectionDetail from './pages/CollectionDetail'
-import JewelleryCollections from './pages/JewelleryCollections'
 import Contact from './pages/Contact'
 
 function App() {
