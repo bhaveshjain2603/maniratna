@@ -178,10 +178,23 @@ Please share more details.`
                             {/* PREVIOUS BUTTON */}
                             <button
                               onClick={() => setCurrentImageIndex(prev => prev === 0 ? images.length - 1 : prev - 1)}
-                              className="flex-shrink-0 h-12 w-12 rounded-full border border-[#b28c49] bg-white text-[#111111] font-bold transition hover:bg-[#f4ebe4] flex items-center justify-center text-2xl"
+                              className="flex-shrink-0 h-12 w-12 rounded-full border border-[#b28c49] bg-white text-[#111111] font-bold transition hover:bg-[#f4ebe4] flex items-center justify-center"
                               aria-label="Previous image"
                             >
-                              ‹
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2.5}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M15 19l-7-7 7-7"
+                                />
+                              </svg>
                             </button>
 
                             {/* INDICATORS */}
@@ -203,10 +216,23 @@ Please share more details.`
                             {/* NEXT BUTTON */}
                             <button
                               onClick={() => setCurrentImageIndex(prev => prev === images.length - 1 ? 0 : prev + 1)}
-                              className="flex-shrink-0 h-12 w-12 rounded-full border border-[#b28c49] bg-white text-[#111111] font-bold transition hover:bg-[#f4ebe4] flex items-center justify-center text-2xl"
+                              className="flex-shrink-0 h-12 w-12 rounded-full border border-[#b28c49] bg-white text-[#111111] font-bold transition hover:bg-[#f4ebe4] flex items-center justify-center"
                               aria-label="Next image"
                             >
-                              ›
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2.5}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>      
                             </button>
                             
                           </div>
