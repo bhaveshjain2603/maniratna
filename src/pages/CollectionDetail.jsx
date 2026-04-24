@@ -32,10 +32,11 @@ function CollectionDetail() {
           cat => cat.key === categoryId
         );
       
-        products = category ? category.products : [];
+        // newest products first
+        products = category ? [...category.products].reverse() : [];
       } else {
         // all products
-        products = collection.categories.flatMap(cat => cat.products);
+        products = collection.categories.flatMap(cat => cat.products).reverse();
       }
     
       console.log("FINAL PRODUCTS:", products.length);
