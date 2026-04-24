@@ -171,6 +171,10 @@ Please share more details.`
                         className="aspect-[4/5] w-full rounded-lg object-cover shadow-sm"
                       />
 
+                      <p className="mt-2 text-xs text-[#5b504a]">
+                        * The model's image is for representation purposes only. Actual product varies in size.
+                      </p>
+
                       {images.length > 1 && (
                         <>
                           <div className="flex justify-between items-center mt-4 gap-2">
