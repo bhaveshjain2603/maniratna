@@ -14,7 +14,7 @@ const collections = [
     description: 'Ornate designs with antique charm for morning and evening silhouettes.',
     image: victorianHero,
     buttonText: 'Explore Designs',
-    link: '/collections/jewellery/victorian-royalty/categories',
+    link: '/collections/victorian-royalty/categories',
     type: 'victorian'
   },
   {
@@ -22,7 +22,7 @@ const collections = [
     description: 'Lavish pieces inspired by celebrations and timeless unions.',
     image: indoHero,
     buttonText: 'View Collection',
-    link: '/collections/jewellery/indo-western/categories',
+    link: '/collections/indo-western/categories',
     type: 'indo'
   },
   {
@@ -30,7 +30,7 @@ const collections = [
     description: 'Heritage motifs with handcrafted goldwork and graceful detailing.',
     image: templeHero,
     buttonText: 'Discover Collection',
-    link: '/collections/jewellery/temple-heritage/categories',
+    link: '/collections/temple-heritage/categories',
     type: 'temple'
   },
   {
@@ -38,7 +38,7 @@ const collections = [
     description: 'Refined, lightweight designs crafted for everyday elegance and modern sophistication.',
     image: minimalHero,
     buttonText: 'Shop Minimal',
-    link: '/collections/jewellery/minimal-edit/categories',
+    link: '/collections/minimal-edit/categories',
     type: 'minimal'
   }
 ]
