@@ -26,7 +26,7 @@ function Collections() {
           Jewellery collections that tell a timeless story.
         </h1>
         <p className="mx-auto max-w-3xl text-base leading-8 text-[#5b504a]">
-          Explore our carefully curated categories of Indo-Western Elegance, Temple Heritage, The Minimal Edit, and Victorian Royalty.
+          Explore our carefully curated collections of Divine Idols, Indo-Western Elegance, Temple Heritage, The Minimal Edit, and Victorian Royalty.
         </p>
       </div>
 
