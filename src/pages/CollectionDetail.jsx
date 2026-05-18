@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getCollectionByKey } from '../data/collectionsData' 
 import { getImagePaths, getPrimaryImage } from '../utils/imageUtils'
 import { fetchCollections } from '../utils/fetchProducts'
+import { isNewProduct } from '../utils/productUtils'
 
 function CollectionDetail() {
   const { collectionId, categoryId } = useParams()
@@ -40,8 +41,10 @@ function CollectionDetail() {
       }
     
       console.log("FINAL PRODUCTS:", products.length);
-    
+
+      
       setProducts(products);
+      console.log(products);
       setLoading(false);
     });
   }, [collectionId, categoryId]);
@@ -123,8 +126,17 @@ Please share more details.`
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {products.map(product => (
-                <article key={product.productCode} className="overflow-hidden border border-[#e6d9cf] bg-[#faf3eb] shadow-sm transition hover:-translate-y-1 hover:shadow-glow">
+              {products.map((product, index) => {
+                
+                return (
+                <article key={product.productCode} className="relative overflow-hidden border border-[#e6d9cf] bg-[#faf3eb] shadow-sm transition hover:-translate-y-1 hover:shadow-glow">
+
+                  {/* NEWLY LAUNCHED BADGE */}
+                  {isNewProduct(product.addedDate) && (
+                    <div className="absolute top-0 right-0 z-10 bg-[#b28c49] text-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em]">
+                      NEW
+                    </div>
+                  )}
 
                   <img
                     src={getPrimaryImage(product)}
@@ -149,7 +161,8 @@ Please share more details.`
                   </div>
 
                 </article>
-              ))}
+                )
+              })}
             </div>
           </>
         )}

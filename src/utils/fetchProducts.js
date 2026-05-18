@@ -51,9 +51,9 @@ const transformData = (data) => {
       color: item.color,
       polish: item.polish,
       material: item.material,
-      dimensions: item.dimensions,
       collection: item.collection,
-      category: item.category
+      category: item.category,
+      addedDate: item.addedDate
     });
   });
 
@@ -75,50 +75,58 @@ export const fetchCollections = async () => {
         header: true,
         skipEmptyLines: true,
         complete: (results) => {
+          // DEBUG: inspect raw sheet headers + first row
+          console.log("RAW CSV DATA:", results.data[0]);
+          console.log("RAW KEYS:", Object.keys(results.data[0]));
 
-          // 🔥 FIX: REMOVE BOM + CLEAN KEYS
           const cleaned = results.data.map((item) => {
             const normalized = {};
-
+          
             Object.keys(item).forEach((key) => {
               const cleanKey = key.trim().replace(/^\uFEFF/, "");
               normalized[cleanKey] = item[key];
             });
-
+          
             return {
               collection: normalized.collection?.trim().toLowerCase() || "",
               collectionImage: normalized.collectionImage?.trim(),
-
+            
               collectionTitle: normalized.collectionTitle,
               collectionSubtitle: normalized.collectionSubtitle,
               collectionDescription: normalized.collectionDescription,
-
+            
               category: normalized.category?.trim().toLowerCase() || "",
               categoryTitle: normalized.categoryTitle,
               categorySubtitle: normalized.categorySubtitle,
               categoryDescription: normalized.categoryDescription,
               categoryImage: normalized.categoryImage?.trim(),
-
+            
               name: normalized.name,
               description: normalized.description,
               productCode: normalized.productCode?.trim(),
               imageCount: Number(normalized.imageCount),
-
+            
               weight: normalized.weight,
               color: normalized.color,
               polish: normalized.polish,
               material: normalized.material,
               dimensions: normalized.dimensions,
-
+            
+              // IMPORTANT
+              addedDate: normalized.addedDate,
+            
               status: normalized.status?.trim().toLowerCase()
             };
           });
-
-          // 🔥 Filter active only
-          const activeData = cleaned.filter((item) => item.status === "active");
-
+        
+          console.log("CLEANED DATA:", cleaned[0]);
+        
+          const activeData = cleaned.filter(
+            (item) => item.status === "active"
+          );
+        
           const structured = transformData(activeData);
-
+        
           resolve(structured);
         },
       });
